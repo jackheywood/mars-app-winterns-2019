@@ -1,4 +1,23 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Mars App
+
+This is the starting template for a Corndel training project to create a [React](https://reactjs.org/) Web Application which will display recent data from Mars obtained by NASA using [NASA's Open APIs](https://api.nasa.gov/).
+
+## Prerequisites
+
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Node.js](https://nodejs.org/en/) - latest stable version
+  - [NPM](https://www.npmjs.com/) should be bundled with this
+- React Developer Tools
+  - [Chrome Extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+  - [Firefox Extension](https://addons.mozilla.org/en-GB/firefox/addon/react-devtools/)
+
+## Setup
+
+1. `cd` to the root directory of this repository.
+1. Run `npm install`.
+1. Open the project in VSCode.
+1. Install the recommended extensions.
+    - You can see these by running "_F1 -> Show Recommended Extensions_" in VSCode.
 
 ## Available Scripts
 
@@ -6,7 +25,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.<br />
+Runs the Mars App in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
@@ -38,6 +57,8 @@ Instead, it will copy all the configuration files and the transitive dependencie
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
