@@ -1,3 +1,3 @@
-import { TempPage } from './TempPage';
+import TempPage from './TempPage';
 
 export default TempPage;

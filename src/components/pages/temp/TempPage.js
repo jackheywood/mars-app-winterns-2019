@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../../assets/images/logo.svg';
 import './TempPage.css';
 
-export function TempPage(props) {
+export default function TempPage(props) {
   return (
     <div>
       <div className="temp-banner">
