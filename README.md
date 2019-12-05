@@ -19,6 +19,29 @@ This is the starting template for a Corndel training project to create a [React]
 1. Install the recommended extensions.
     - You can see these by running "_F1 -> Show Recommended Extensions_" in VSCode.
 
+## Workflow
+
+We'll be keeping track of the project tasks using [Trello](https://trello.com/).
+
+- Sign up for a Trello account.
+- Ask your trainer to add you to the Mars App Board.
+
+The workflow should be as follows:
+
+1. Assign yourself to a ticket from the "To Do" column in discussion with your trainer and move it to "In Progress".
+1. Pull the latest version of `master`.
+1. Create a new branch with name of the form `${ticketNumber}_ShortDescription`
+    - e.g. `MARS-2_CreateRoverComponent`
+1. Write some code!
+1. Push to a remote branch on GitHub.
+1. Create a [GitHub pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) for your ticket and [request a pull request review](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/requesting-a-pull-request-review) from your trainer.
+1. Move the ticket to "In Review" in Trello.
+1. Once your trainer has reviewed your code:
+    - If there any changes needed, carry them out and push to GitHub again.
+    - Repeat until both you and the reviewer are satisfied with the code.
+1. Once your branch has been completely signed off, merge it into `master` and push.
+1. Move the ticket to "Completed" and repeat!
+
 ## Available Scripts
 
 In the project directory, you can run:
