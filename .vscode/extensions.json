@@ -8,7 +8,9 @@
 		"joshpeng.sublime-babel-vscode",
 		"christian-kohler.npm-intellisense",
 		"formulahendry.auto-rename-tag",
-		"formulahendry.auto-close-tag"
+		"formulahendry.auto-close-tag",
+		"christian-kohler.path-intellisense",
+		"eg2.vscode-npm-script"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
