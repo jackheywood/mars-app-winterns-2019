@@ -9,7 +9,10 @@ export default function Navbar() {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/example">Example</Link>
+        <Link to="/Photos">Photos</Link>
+      </li>
+      <li>
+        <Link to="/Weather">Weather</Link>
       </li>
     </ul>
   );
