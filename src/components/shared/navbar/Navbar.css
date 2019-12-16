@@ -7,17 +7,24 @@
 }
 
 li {
-  float: left;
+  display: inline; 
+  vertical-align: top;
 }
 
 li a {
-  display: block;
+  display: inline-block;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  vertical-align: top;
 }
 
 li a:hover {
   background-color: #111;
+}
+
+a img {
+  width: 10%;
+  height: 10%;
 }
