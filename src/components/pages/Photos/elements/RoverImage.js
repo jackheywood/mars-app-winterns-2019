@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import CameraNavbar from './cameraNavbar';
-import './PhotoPage.css';
+import nisa from '../../../../assets/images/nisa.JPG';
+import '../PhotoPage.css';
 
-export default class ImageBloack extends Component {
+export default class RoverImage extends Component {
   render() {
     return (
       <div className="rover-image">
-        <img className="camera-capture" src="../../../assets/images/logo.svg" alt="Mars" />
+        <img className="camera-capture" src={nisa} alt="Mars" />
         <CameraNavbar />
       </div>
     );

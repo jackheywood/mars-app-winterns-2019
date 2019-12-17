@@ -1,4 +1,4 @@
-.cameranavbar {
+.camera-navbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -7,14 +7,16 @@
 }
 
 
-.camerabox {
+.rover-camera-button {
   display: block;
+  width: 100px;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 20px 16px;
   text-decoration: none;
+  background-color: pink;
 }
 
-.camerabox:hover {
+.rover-camera-button:hover {
   background-color: rgb(255, 148, 166);
 }

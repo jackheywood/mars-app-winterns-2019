@@ -1,22 +1,24 @@
-.rovernavbar {
+.rover-navbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: paleturquoise;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.roverbox {
+.rover-button {
   display: block;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 30px 16px;
   text-decoration: none;
+  background-color: powderblue;
+  float:left;
+  width: 200px;
 }
 
-.roverbox:hover {
+.rover-button:hover {
   background-color:rgb(0, 162, 255);
 }

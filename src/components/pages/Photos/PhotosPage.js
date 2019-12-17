@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import RoverNavbar from './roverNavbar';
-import Rover from './rover';
+import RoverNavbar from './elements/roverNavbar';
+import Rover from './elements/Rover';
 import './PhotoPage.css';
 
 

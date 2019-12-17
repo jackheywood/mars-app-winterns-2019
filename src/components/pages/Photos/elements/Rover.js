@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import ImageBlock from './ImageBlock';
-import AboutBlock from './AboutBlock';
-import './PhotoPage.css';
+import RoverImage from './RoverImage';
+import AboutRover from './AboutRover';
+import '../PhotoPage.css';
 
 export default class Rover extends Component {
   render() {
     return (
       <div className="rover-container">
-        <ImageBlock />
-        <AboutBlock />
+        <RoverImage />
+        <AboutRover />
       </div>
     );
   }
