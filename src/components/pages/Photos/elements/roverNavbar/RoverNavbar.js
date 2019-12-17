@@ -2,14 +2,12 @@ import React from 'react';
 import RoverButton from './RoverButton';
 import './RoverNavbar.css';
 
-export default function Navbar() {
+export default function RoverNavbar() {
   return (
-    <ul className="rover-navbar">
-      <li className="rover-box">
-        <RoverButton roverName="curiosity" />
-        <RoverButton roverName="Opportunity" />
-        <RoverButton roverName="Spirit" />
-      </li>
-    </ul>
+    <div className="rover-navbar">
+      <RoverButton roverName="Curiosity" />
+      <RoverButton roverName="Opportunity" />
+      <RoverButton roverName="Spirit" />
+    </div>
   );
 }

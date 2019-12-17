@@ -17,6 +17,8 @@
   background-color: powderblue;
   float:left;
   width: 213px;
+  font-size: large;
+  font-family: fantasy;
 }
 
 .rover-button:hover {

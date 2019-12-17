@@ -2,9 +2,9 @@ import React from 'react';
 import RoverCameraButton from './RoverCameraButton';
 import './CameraNavbar.css';
 
-export default function Navbar() {
+export default function CameraNavbar() {
   return (
-    <ul className="camera-navbar">
+    <div className="camera-navbar">
       <RoverCameraButton cameraName="FHAZ" />
       <RoverCameraButton cameraName="RHAZ" />
       <RoverCameraButton cameraName="MAST" />
@@ -14,6 +14,6 @@ export default function Navbar() {
       <RoverCameraButton cameraName="NAVCAM" />
       <RoverCameraButton cameraName="PANCAM" />
       <RoverCameraButton cameraName="MINITES" />
-    </ul>
+    </div>
   );
 }
