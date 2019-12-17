@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 export default class WeatherTitleColumn extends Component {
   render() {
     return (
-      <div>
-        <div />
-        <div>Temperature:</div>
-        <div>Wind:</div>
-        <div>Pressure:</div>
+      <div className="column">
+        <div className="cell" />
+        <div className="cell">Temperature:</div>
+        <div className="cell">Wind:</div>
+        <div className="cell">Pressure:</div>
       </div>
     );
   }
