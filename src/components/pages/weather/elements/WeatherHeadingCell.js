@@ -4,9 +4,7 @@ export default class WeatherHeadingCell extends Component {
   render() {
     return (
       <div className="weather-cell">
-        Day:
-        Date: {this.props.earthDate}
-        Season:
+        <p><h3>: {this.props.earthDate}</h3></p>
       </div>
     );
   }

@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 
 export default class WeatherTempCell extends Component {
   render() {
+    const averageTemp = this.props.dayTemperatureData.avg;
+    const maxTemp = this.props.dayTemperatureData.max;
+    const minTemp = this.props.dayTemperatureData.min;
     return (
-      <div className="weather-cell" averageTemperature={this.props.dayTemperatureData.avg} minTemperature={this.props.dayTemperatureData.min} maxTemperature={this.props.dayTemperatureData.max}>
-        <p><h4>Temperature: {this.props.dayTemperatureData.avg}</h4></p>
-        <p>Max: {this.props.dayTemperatureData.max}</p>
-        <p>Min: {this.props.dayTemperatureData.min}</p>
+      <div className="weather-cell">
+        <p><h4>Temperature: {averageTemp}</h4></p>
+        <p>Max: {maxTemp}</p>
+        <p>Min: {minTemp}</p>
       </div>
     );
   }
