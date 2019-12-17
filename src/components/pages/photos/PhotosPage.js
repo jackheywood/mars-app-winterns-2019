@@ -5,10 +5,27 @@ import './PhotoPage.css';
 
 
 export default class PhotosPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentRover: 'Curiosity',
+    };
+  }
+
+  handleClick(roverName) {
+    this.setState({
+      currentRover: roverName,
+    });
+  }
+
   render() {
     return (
       <div className="photo-page">
-        <RoverNavbar />
+        <RoverNavbar
+          onClick={roverName => this.handleClick(roverName)}
+        />
+        {/*the li is for us to check clicking on the buttons does change the state */}
+        <li>{this.state.currentRover}</li>
         <Rover />
       </div>
     );
