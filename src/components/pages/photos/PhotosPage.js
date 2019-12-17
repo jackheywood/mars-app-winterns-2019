@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import TempPage from '../temp';
 
-export default class ExamplePage extends Component {
+export default class PhotosPage extends Component {
   render() {
     return (
-      <TempPage title="Example" />
+      <TempPage title="Photos" />
     );
   }
 }
