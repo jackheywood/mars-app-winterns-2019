@@ -4,9 +4,9 @@ import MarsApp from './components/MarsApp';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
 
-import {callInsight} from './api/InSightAPI.js'
+import callInsight from './api/InSightAPI';
 
-callInsight();
+callInsight().then(objects => console.log(objects));
 
 ReactDOM.render(
   <MarsApp />,
