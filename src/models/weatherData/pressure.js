@@ -1,7 +1,7 @@
 export default class Pressure {
-  constructor(data) {
-    this.max = data.mx;
-    this.min = data.mn;
-    this.avg = data.av;
+  constructor(inSightPressureData) {
+    this.max = inSightPressureData.mx;
+    this.min = inSightPressureData.mn;
+    this.avg = inSightPressureData.av;
   }
 }

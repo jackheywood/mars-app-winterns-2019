@@ -3,11 +3,11 @@ import Wind from './weatherData/wind';
 import Pressure from './weatherData/pressure';
 
 export default class Weather {
-  constructor(data) {
-    this.earthDate = data.First_UTC;
-    this.season = data.Season;
-    this.temp = new Temperature(data.AT);
-    this.pressure = new Pressure(data.PRE);
-    this.wind = new Wind(data);
+  constructor(inSightWeatherData) {
+    this.earthDate = inSightWeatherData.First_UTC;
+    this.season = inSightWeatherData.Season;
+    this.temp = new Temperature(inSightWeatherData.AT);
+    this.pressure = new Pressure(inSightWeatherData.PRE);
+    this.wind = new Wind(inSightWeatherData);
   }
 }
