@@ -1,5 +1,5 @@
 import request from 'request';
-import Weather from './weather';
+import Weather from '../models/weather';
 
 export default function callInSight() {
   const API_KEY = 'XFI8MAWpQ5sKZiB3Wvw5TaUCSaxxieSkt54RmAuJ';
@@ -16,7 +16,6 @@ export default function callInSight() {
     });
   });
 }
-
 
 /*
 
