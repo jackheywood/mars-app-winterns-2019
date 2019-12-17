@@ -1,0 +1,34 @@
+.photo-page {
+  text-align: center;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.rover-container {
+  min-width: 775px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  vertical-align: top;
+  text-align: center;
+}
+
+.rover-image {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  padding: 20px 0;
+}
+
+.rover-image .camera-capture {
+  width: 100%;
+  height: auto;
+  border:2px solid black
+}
+
+.about-continer {
+  padding: 20px 0;
+  text-align: center;
+}

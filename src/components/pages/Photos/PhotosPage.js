@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-import TempPage from '../temp';
+import RoverNavbar from './roverNavbar';
+import Rover from './rover';
+import './PhotoPage.css';
+
 
 export default class PhotosPage extends Component {
   render() {
     return (
-      <TempPage title="Photos" />
+      <div className="photo-page">
+        <RoverNavbar />
+        <Rover />
+      </div>
     );
   }
 }
