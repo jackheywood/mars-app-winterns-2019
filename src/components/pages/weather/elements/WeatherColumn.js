@@ -7,7 +7,7 @@ import WeatherPressureCell from './WeatherPressureCell';
 export default class WeatherColumn extends Component {
   render() {
     return (
-      <div className="column">
+      <div className="weather-column">
         <WeatherHeadingCell day={this.props.day} />
         <WeatherTempCell day={this.props.day} />
         <WeatherWindCell day={this.props.day} />
