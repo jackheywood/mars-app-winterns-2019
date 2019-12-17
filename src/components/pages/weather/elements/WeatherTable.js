@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import WeatherColumn from './WeatherColumn';
+import WeatherTitleColumn from './WeatherTitleColumn';
 
 export default class WeatherTable extends Component {
   render() {
     return (
       <div>
-        <WeatherColumn day="title" />
+        <WeatherTitleColumn />
         <WeatherColumn day="1" />
         <WeatherColumn day="2" />
         <WeatherColumn day="3" />

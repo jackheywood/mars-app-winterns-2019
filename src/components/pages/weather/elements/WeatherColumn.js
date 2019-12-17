@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import WeatherCell from './WeatherCell';
+import WeatherHeadingCell from './WeatherHeadingCell';
+import WeatherTempCell from './WeatherTempCell';
+import WeatherWindCell from './WeatherWindCell';
+import WeatherPressureCell from './WeatherPressureCell';
 
 export default class WeatherColumn extends Component {
   render() {
     return (
       <div>
-        <WeatherCell type="header" day={this.props.day} />
-        <WeatherCell type="temp" day={this.props.day} />
-        <WeatherCell type="wind" day={this.props.day} />
-        <WeatherCell type="pressure" day={this.props.day} />
+        <WeatherHeadingCell day={this.props.day} />
+        <WeatherTempCell day={this.props.day} />
+        <WeatherWindCell day={this.props.day} />
+        <WeatherPressureCell day={this.props.day} />
       </div>
     );
   }
