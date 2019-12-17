@@ -5,7 +5,7 @@ export default class WeatherTable extends Component {
   render() {
     return (
       <div>
-        <WeatherColumn day="titles" />
+        <WeatherColumn day="title" />
         <WeatherColumn day="1" />
         <WeatherColumn day="2" />
         <WeatherColumn day="3" />

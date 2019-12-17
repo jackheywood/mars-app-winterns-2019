@@ -4,7 +4,7 @@ export default class WeatherCell extends Component {
   render() {
     return (
       <div>
-        <p>{this.props.day}</p>
+        Type: {this.props.type}; Day: {this.props.day}
       </div>
     );
   }
