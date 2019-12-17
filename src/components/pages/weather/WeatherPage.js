@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import TempPage from '../temp';
+import WeatherTable from './elements/WeatherTable';
+import './WeatherPage.css';
 
 export default class WeatherPage extends Component {
   render() {
     return (
-      <TempPage title="Weather" />
+      <WeatherTable />
     );
   }
 }
