@@ -23,9 +23,9 @@
 }
 
 .rover-image .camera-capture {
-  width: 30%;
-  height: auto;
-  border:2px solid black
+  width: 540px;
+  height: 540px;
+  border:4.5px solid black
 }
 
 .about-container {

@@ -6,7 +6,9 @@ export default function Navbar() {
   return (
     <ul className="rover-navbar">
       <li className="rover-box">
-        <RoverButton />
+        <RoverButton roverName="curiosity" />
+        <RoverButton roverName="Opportunity" />
+        <RoverButton roverName="Spirit" />
       </li>
     </ul>
   );

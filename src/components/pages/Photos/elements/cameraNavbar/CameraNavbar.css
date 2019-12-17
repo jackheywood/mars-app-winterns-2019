@@ -9,7 +9,8 @@
 
 .rover-camera-button {
   display: block;
-  width: 100px;
+  width: 90px;
+  height: 61px;
   color: black;
   text-align: center;
   padding: 20px 16px;
