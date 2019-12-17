@@ -1,36 +1,67 @@
 import request from 'request';
 import API_KEY from './apiKey';
 import RoverPhoto from '../models/roverPhoto';
+import Rover from '../models/rover';
 
-export default function photos(rover) {
-  return (
-    getMaxDate(rover)
-      .then(maxDate => getPhotos(rover, maxDate))
-  );
+export default function photos() {
+  const curiosityCameras = ['FHAZ', 'RHAZ', 'MAST', 'CHEMCAM', 'MAHLI', 'MARDI', 'NAVCAM'];
+  const spiritCameras = ['FHAZ', 'RHAZ', 'NAVCAM', 'PANCAM', 'MINITES'];
+  const opportunityCameras = ['FHAZ', 'RHAZ', 'NAVCAM', 'PANCAM', 'MINITES'];
+
+  const rovers = [new Rover('curiosity', curiosityCameras),
+    new Rover('spirit', spiritCameras), 
+    new Rover('opportunity', opportunityCameras)];
+
+  let output = rovers.map(rover =>
+    getManifest(rover.name)
+      .then(manifest => getSols(manifest, rover))
+      .then(sols => getPhotos(rover, sols))
+  )
+
+  return output;
 }
 
-function getMaxDate(rover) {
+
+function getManifest(rover) {
   return new Promise(resolve => {
     const url = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?&api_key=${API_KEY}`;
 
     request(url, (error, response, body) => {
       const manifest = JSON.parse(body);
-      const maxDate = manifest.photo_manifest.max_date;
-      resolve(maxDate);
+      resolve(manifest);
     });
   });
 }
 
-function getPhotos(rover, maxDate) {
+function getSols(manifest, rover) {
   return new Promise(resolve => {
-    const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${maxDate}&api_key=${API_KEY}`;
-    request(url, (error, response, body) => {
-      const photoJSONs = JSON.parse(body);
-      // console.log(photoJSONs);
-      const pics = photoJSONs.photos.map(photo => (
-        new RoverPhoto(photo.img_src, photo.camera.full_name, photo.camera.name, rover, maxDate)
-      ));
-      resolve(pics);
+    const sols = rover.cameras.map(camera => {
+      let maxSol;
+      let i = manifest.photo_manifest.photos.length;
+      while (!maxSol && i > 0) {
+        i -= 1;
+        maxSol = manifest.photo_manifest.photos[i].cameras.includes(camera.shortName) ? manifest.photo_manifest.photos[i].sol : null;
+      }
+      return maxSol;
     });
+    resolve(sols);
+  });
+}
+
+
+function getPhotos(rover, sols) {
+  return new Promise(resolve => {
+    for (let i = 0; i < rover.cameras.length; i++) {
+      const sol = sols[i];
+      const camera = rover.cameras[i].shortName;
+      const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover.name}/photos?sol=${sol}&camera=${camera}&api_key=${API_KEY}`;
+      request(url, (error, response, body) => {
+        const photoJSONs = JSON.parse(body);
+        const photosArray = photoJSONs.photos.map(photo => new RoverPhoto(photo.img_src, photo.earth_date));
+        rover.cameras[i].photos.push(photosArray);
+      });
+    }
+    //console.log(rover);
+    resolve(rover);
   });
 }
