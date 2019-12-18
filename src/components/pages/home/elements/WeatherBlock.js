@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import '../HomePage.css';
+import PageNavButton from '../../../shared/PageNavButton';
 
 export default class WeatherBlock extends Component {
   render() {
     return (
       <div className="weather-block">
         <h3>Today&apos;s weather forecast: </h3>
-        <Link to="/weather">See more weather info</Link>
+        <PageNavButton
+          buttonLink="/weather"
+          message="See more weather info"
+        />
       </div>
     );
   }
