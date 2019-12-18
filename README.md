@@ -78,7 +78,7 @@ To get set up with Firebase:
 
 ### Deployment steps
 
-**Confirm with your trainer before deploying anything to Firebase**
+Remember to **confirm with your trainer before deploying anything to Firebase**
 
 1. Build the project by running `npm run build`.
 2. Deploy to Firebase by running `firebase deploy`.
