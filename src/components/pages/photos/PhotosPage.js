@@ -12,7 +12,7 @@ export default class PhotosPage extends Component {
     };
   }
 
-  handleClick(roverName) {
+  selectRover(roverName) {
     this.setState({
       currentRover: roverName,
     });
@@ -22,7 +22,7 @@ export default class PhotosPage extends Component {
     return (
       <div className="photo-page">
         <RoverNavbar
-          onClick={roverName => this.handleClick(roverName)}
+          onClick={roverName => this.selectRover(roverName)}
         />
         {/*the li is for us to check clicking on the buttons does change the state */}
         <li>{this.state.currentRover}</li>

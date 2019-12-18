@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import RoverButton from './RoverButton';
 import './RoverNavbar.css';
+import roverNames from '../../../../../enums/roverNames';
 
-export default function RoverNavbar(props) {
-  return (
-    <div className="rover-navbar">
-      <RoverButton roverName="Curiosity" onClick={() => props.onClick('Curiosity')} />
-      <RoverButton roverName="Opportunity" onClick={() => props.onClick('Opportunity')} />
-      <RoverButton roverName="Spirit" onClick={() => props.onClick('Spirit')} />
-    </div>
-  );
+export default class RoverNavbar extends Component {
+  renderRoverButtons() {
+    return Object.keys(roverNames).map(roverName => (
+      <RoverButton
+        key={roverName}
+        roverName={roverName}
+        onClick={() => this.props.onClick(roverNames[roverName])}
+      />
+    ));
+  }
+
+  render() {
+    return (
+      <div className="rover-navbar">
+        {this.renderRoverButtons()}
+      </div>
+    );
+  }
 }
