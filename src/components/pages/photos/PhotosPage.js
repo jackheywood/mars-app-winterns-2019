@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import RoverNavbar from './elements/roverNavbar';
 import Rover from './elements/Rover';
 import './PhotoPage.css';
+import roverNames from '../../../enums/roverNames';
 
 
 export default class PhotosPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentRover: 'Curiosity',
+      currentRover: roverNames.CURIOSITY,
     };
   }
 

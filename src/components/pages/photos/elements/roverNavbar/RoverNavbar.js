@@ -5,11 +5,11 @@ import roverNames from '../../../../../enums/roverNames';
 
 export default class RoverNavbar extends Component {
   renderRoverButtons() {
-    return Object.keys(roverNames).map(roverName => (
+    return Object.values(roverNames).map(roverName => (
       <RoverButton
         key={roverName}
         roverName={roverName}
-        onClick={() => this.props.onClick(roverNames[roverName])}
+        onClick={() => this.props.onClick(roverName)}
       />
     ));
   }
