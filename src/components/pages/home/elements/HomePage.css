@@ -1,0 +1,14 @@
+.temperatureElement {
+  display: inline-block;
+  padding: 0px 15px;
+}
+
+.pressureElement {
+  display: inline-block;
+  padding: 0px 15px;
+}
+
+.windElement {
+  display: inline-block;
+  padding: 0px 15px;
+}
