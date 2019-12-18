@@ -33,6 +33,12 @@
         "arrow-parens": [2, "as-needed"],
         "no-use-before-define": 0,
         "prefer-arrow-callback": 1,
-        "eol-last": 1
+        "eol-last": 1,
+        "object-curly-newline": [2, {
+            "ObjectExpression": "always",
+            "ObjectPattern": "never",
+            "ImportDeclaration": "never",
+            "ExportDeclaration": "never"
+        }]
     }
 }
