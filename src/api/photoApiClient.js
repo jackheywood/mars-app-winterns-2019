@@ -3,21 +3,23 @@ import API_KEY from './apiKey';
 import RoverPhoto from '../models/roverPhoto';
 import Rover from '../models/rover';
 
-export default function photos() {
+export default function getPhotos() {
   const curiosityCameras = ['FHAZ', 'RHAZ', 'MAST', 'CHEMCAM', 'MAHLI', 'MARDI', 'NAVCAM'];
   const spiritCameras = ['FHAZ', 'RHAZ', 'NAVCAM', 'PANCAM', 'MINITES'];
   const opportunityCameras = ['FHAZ', 'RHAZ', 'NAVCAM', 'PANCAM', 'MINITES'];
 
-  const rovers = [new Rover('curiosity', curiosityCameras),
+  const rovers = [
+    new Rover('curiosity', curiosityCameras),
     new Rover('spirit', spiritCameras),
-    new Rover('opportunity', opportunityCameras)];
+    new Rover('opportunity', opportunityCameras),
+  ];
 
-  const output = rovers.map(rover =>
+  const roverPromisesArray = rovers.map(rover =>
     getManifest(rover.name)
       .then(manifest => getSols(manifest, rover))
-      .then(sols => getPhotos(rover, sols)));
+      .then(sols => getAllRoverPhotos(rover, sols)));
 
-  return output;
+  return Promise.all(roverPromisesArray);
 }
 
 
@@ -37,23 +39,21 @@ function getManifest(rover) {
 }
 
 function getSols(manifest, rover) {
-  return new Promise(resolve => {
-    const sols = rover.cameras.map(camera => {
-      let maxSol;
-      let photoManifest = manifest.photo_manifest.photos;
-      let i = photoManifest.length;
-      while (!maxSol && i > 0) {
-        i -= 1;
-        maxSol = photoManifest[i].cameras.includes(camera.shortName) ? photoManifest[i].sol : null;
-      }
-      return maxSol;
-    });
-    resolve(sols);
+  const sols = rover.cameras.map(camera => {
+    let maxSol;
+    const photoManifest = manifest.photo_manifest.photos;
+    let i = photoManifest.length;
+    while (!maxSol && i > 0) {
+      i -= 1;
+      maxSol = photoManifest[i].cameras.includes(camera.shortName) ? photoManifest[i].sol : null;
+    }
+    return maxSol;
   });
+  return sols;
 }
 
 
-function getPhotos(rover, sols) {
+function getAllRoverPhotos(rover, sols) {
   return new Promise((resolve, reject) => {
     for (let i = 0; i < rover.cameras.length; i++) {
       const sol = sols[i];
