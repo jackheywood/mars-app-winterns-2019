@@ -6,7 +6,7 @@ import PhotoBlock from './elements/PhotoBlock';
 export default class HomePage extends Component {
   render() {
     return (
-      <div>
+      <div className="homepage-container">
         <PageHeading bannerName="Welcome to Mars" />
         <WeatherBlock />
         <PhotoBlock />

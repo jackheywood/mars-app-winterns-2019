@@ -1,0 +1,19 @@
+.homepage-container {
+  text-align: center;
+  display: inline-block;
+  width: 400px;
+}
+
+.weather-block {
+  text-align: center;
+  display: inline-block;
+}
+
+.photo-block{
+  text-align: center;
+  display: inline-block;
+}
+
+.homepage-photo{
+  width: 400px;
+}

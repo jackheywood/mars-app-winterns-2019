@@ -21,6 +21,6 @@
   font-family: fantasy;
 }
 
-.rover-button:hover {
+.rover-button:focus {
   background-color:rgb(0, 162, 255);
 }
