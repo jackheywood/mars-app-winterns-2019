@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import WeatherTitle from './weatherTitle/WeatherTitle';
 import WeathewrAttributes from './weatherAttributes/WeatherAttributes';
 import getMarsWeatherData from '../../../../api/inSightApiClient';
@@ -40,7 +39,6 @@ export default class WeatherBlock extends Component {
       <div className="weather-block">
         <WeatherTitle MarsSol={this.state.weather.sol} EarthDate={this.state.weather.earthDate} MarsSeason={this.state.weather.season} />
         <WeathewrAttributes Temp={this.state.weather.temp} Pressure={this.state.weather.pressure} Wind={this.state.weather.wind} />
-        <Link to="/weather"> See more weather</Link>
         <PageNavButton
           buttonLink="/weather"
           message="See more weather info"
