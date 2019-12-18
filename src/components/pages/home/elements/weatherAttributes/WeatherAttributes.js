@@ -3,13 +3,13 @@ import TemperatureElement from './TemperatureElement';
 import PressureElement from './PressureElement';
 import WindElement from './WindElement';
 
-export default class WeathewrAttributes extends Component {
+export default class WeatherAttributes extends Component {
   render() {
     return (
-      <div className="weatherAttributes">
-        <TemperatureElement Temp={this.props.Temp} />
-        <PressureElement Pressure={this.props.Pressure} />
-        <WindElement Wind={this.props.Wind} />
+      <div className="weather-attributes">
+        <TemperatureElement temp={this.props.temp} />
+        <PressureElement pressure={this.props.pressure} />
+        <WindElement wind={this.props.wind} />
       </div>
     );
   }

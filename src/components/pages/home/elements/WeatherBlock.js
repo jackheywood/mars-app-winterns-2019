@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import WeatherTitle from './weatherTitle/WeatherTitle';
-import WeathewrAttributes from './weatherAttributes/WeatherAttributes';
+import WeatherAttributes from './weatherAttributes/WeatherAttributes';
 import getMarsWeatherData from '../../../../api/inSightApiClient';
 import '../HomePage.css';
 import PageNavButton from '../../../shared/PageNavButton';
@@ -8,7 +8,7 @@ import PageNavButton from '../../../shared/PageNavButton';
 export default class WeatherBlock extends Component {
   constructor(props) {
     super(props);
-    this.state = { weather: this.dummyValues() };
+    this.state = { weather: null };
   }
 
   componentDidMount() {
@@ -16,34 +16,32 @@ export default class WeatherBlock extends Component {
   }
 
   getData() {
-    getMarsWeatherData().then(weather => (this.setState({
-      weather: weather.slice(weather.length - 1)[0],
-    })
-    ));
-  }
-
-  dummyValues() {
-    return ({
-      earthDate: null,
-      sol: null,
-      pressure: {avg: null, max: null, min: null},
-      season: null,
-      temp: {avg: null, max: null, min: null},
-      wind: {avg: null, max: null, min: null, dir: null},
-    });
+    getMarsWeatherData()
+      .then(weather => (this.setState({
+        weather: weather.slice(weather.length - 1)[0],
+      })));
   }
 
   render() {
-    console.log(this.state.weather);
-    return (
+    return this.state.weather ? (
       <div className="weather-block">
-        <WeatherTitle MarsSol={this.state.weather.sol} EarthDate={this.state.weather.earthDate} MarsSeason={this.state.weather.season} />
-        <WeathewrAttributes Temp={this.state.weather.temp} Pressure={this.state.weather.pressure} Wind={this.state.weather.wind} />
+        <WeatherTitle
+          marsSol={this.state.weather.sol}
+          earthDate={this.state.weather.earthDate}
+          marsSeason={this.state.weather.season}
+        />
+        <WeatherAttributes
+          temp={this.state.weather.temp}
+          pressure={this.state.weather.pressure}
+          wind={this.state.weather.wind}
+        />
         <PageNavButton
           buttonLink="/weather"
           message="See more weather info"
         />
       </div>
+    ) : (
+      <div>This will be aloading spinner</div>
     );
   }
 }

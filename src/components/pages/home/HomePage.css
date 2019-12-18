@@ -20,17 +20,17 @@
   display: block;
 }
 
-.temperatureElement {
+.temperature-element {
   display: inline-block;
   padding: 0px 15px;
 }
 
-.pressureElement {
+.pressure-element {
   display: inline-block;
   padding: 0px 15px;
 }
 
-.windElement {
+.wind-element {
   display: inline-block;
   padding: 0px 15px;
 }

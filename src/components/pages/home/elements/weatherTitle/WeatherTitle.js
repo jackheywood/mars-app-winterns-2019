@@ -6,11 +6,11 @@ import Season from './MarsSeason';
 export default class WeatherTitle extends Component {
   render() {
     return (
-      <div className="weatherTitle">
+      <div className="weather-title">
         <h3>Elysium Planitia, Mars</h3>
-        <Season MarsSeason={this.props.MarsSeason} />
-        <MarsSol MarsSol={this.props.MarsSol} />
-        <EarthDate EarthDate={this.props.EarthDate} />
+        <Season marsSeason={this.props.marsSeason} />
+        <MarsSol marsSol={this.props.marsSol} />
+        <EarthDate earthDate={this.props.earthDate} />
       </div>
     );
   }
