@@ -23,11 +23,9 @@ export default function photos() {
 
 function getManifest(rover) {
   return new Promise((resolve, reject) => {
-
     const url = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?&api_key=${API_KEY}`;
 
     request(url, (error, response, body) => {
-
       if (response.statusCode !== 200) {
         reject(Error(`failed to get manifest from ${rover}`));
       } else {
