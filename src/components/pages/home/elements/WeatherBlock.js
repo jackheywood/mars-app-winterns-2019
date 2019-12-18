@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import WeatherTitle from './weatherTitle/WeatherTitle';
 import WeathewrAttributes from './weatherAttributes/WeatherAttributes';
 import getMarsWeatherData from '../../../../api/inSightApiClient';
-import './HomePage.css';
+import '../HomePage.css';
+import PageNavButton from '../../../shared/PageNavButton';
 
 export default class WeatherBlock extends Component {
   constructor(props) {
@@ -40,6 +41,10 @@ export default class WeatherBlock extends Component {
         <WeatherTitle MarsSol={this.state.weather.sol} EarthDate={this.state.weather.earthDate} MarsSeason={this.state.weather.season} />
         <WeathewrAttributes Temp={this.state.weather.temp} Pressure={this.state.weather.pressure} Wind={this.state.weather.wind} />
         <Link to="/weather"> See more weather</Link>
+        <PageNavButton
+          buttonLink="/weather"
+          message="See more weather info"
+        />
       </div>
     );
   }

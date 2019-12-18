@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   vertical-align: middle;
+  width: 700px;
 }
 
 .rover-container {
@@ -34,4 +35,6 @@
   display: inline-block;
   align-items: center;
   justify-content: center;
+  width: 610px;
+  background-color: cornsilk;
 }

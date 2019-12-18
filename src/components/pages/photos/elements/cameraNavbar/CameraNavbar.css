@@ -16,6 +16,6 @@
   background-color: pink;
 }
 
-.rover-camera-button:hover {
+.rover-camera-button:focus {
   background-color: rgb(255, 148, 166);
 }
