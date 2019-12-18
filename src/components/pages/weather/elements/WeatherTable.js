@@ -7,12 +7,16 @@ import getMarsWeatherData from '../../../../api/inSightApiClient';
 export default class WeatherTable extends Component {
   constructor(props) {
     super(props);
-    this.state = { inSightWeather: null };
+    this.state = {
+      inSightWeather: null,
+    };
   }
 
   componentDidMount() {
     getMarsWeatherData()
-      .then(inSightWeather => this.setState({ inSightWeather }));
+      .then(inSightWeather => this.setState({
+        inSightWeather,
+      }));
   }
 
   render() {
