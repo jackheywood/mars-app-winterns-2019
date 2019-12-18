@@ -40,6 +40,8 @@
             "ImportDeclaration": "never",
             "ExportDeclaration": "never"
         }],
-        "prefer-destructuring": 0
+        "prefer-destructuring": 0,
+        "no-plusplus": 0,
+        "max-len": 0
     }
 }
