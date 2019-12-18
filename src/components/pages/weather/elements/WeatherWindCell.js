@@ -7,7 +7,7 @@ export default class WeatherWindCell extends Component {
     const minWind = this.props.dayWindData.min;
     const directionWind = this.props.dayWindData.dir;
     return (
-      <div className="weather-cell">
+      <div className="wind-cell">
         <p><h4>Wind Speed: {averageWind}</h4></p>
         <p>Max: {maxWind}</p>
         <p>Min: {minWind}</p>

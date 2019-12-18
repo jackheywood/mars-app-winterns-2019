@@ -6,3 +6,21 @@
   border: 1px solid black;
   min-height: 25px;
 }
+
+.temperature-cell {
+  border: 1px solid black;
+  min-height: 25px;
+  background-color: rgb(238, 233, 157);
+}
+
+.pressure-cell {
+  border: 1px solid black;
+  min-height: 25px;
+  background-color: rgb(176, 230, 194);
+}
+
+.wind-cell {
+  border: 1px solid black;
+  min-height: 25px;
+  background-color: powderblue;
+}
