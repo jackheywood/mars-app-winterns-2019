@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 export default class WeatherHeadingCell extends Component {
   render() {
-    const { earthDate } = this.props;
-    const date = new Date(earthDate);
+    const date = new Date(this.props.earthDate);
 
     return (
       <div className="weather-cell">

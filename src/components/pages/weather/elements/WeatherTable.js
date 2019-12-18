@@ -29,7 +29,6 @@ export default class WeatherTable extends Component {
       </div>
     ) : (
       <div>This will be a loading spinner.</div>
-    )
-    );
+    ));
   }
 }
