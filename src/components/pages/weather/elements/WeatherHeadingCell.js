@@ -7,7 +7,7 @@ export default class WeatherHeadingCell extends Component {
 
     return (
       <div className="weather-cell">
-        <p><h4>{date.getDate()}/{date.getMonth()}/{date.getFullYear()}</h4></p>
+        <h4>{date.getDate()}/{date.getMonth()}/{date.getFullYear()}</h4>
         <p>({this.props.season})</p>
       </div>
     );

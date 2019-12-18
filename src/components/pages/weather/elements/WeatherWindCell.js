@@ -8,7 +8,7 @@ export default class WeatherWindCell extends Component {
     const directionWind = this.props.dayWindData.dir;
     return (
       <div className="wind-cell">
-        <p><h4>Wind Speed: {averageWind}</h4></p>
+        <h4>Wind Speed: {averageWind}</h4>
         <p>Max: {maxWind}</p>
         <p>Min: {minWind}</p>
         <p>Direction: {directionWind}</p>

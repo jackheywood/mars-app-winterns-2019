@@ -6,20 +6,13 @@ export default class WeatherTitleColumn extends Component {
       <div className="weather-column">
         <div className="weather-cell" />
         <div className="weather-cell">
-          <p><h4>Temperature</h4></p>
-          <p>.</p>
-          <p>.</p>
+          <h4>Temperature</h4>
         </div>
         <div className="weather-cell">
-          <p><h4>Wind</h4></p>
-          <p>.</p>
-          <p>.</p>
-          <p>.</p>
+          <h4>Wind</h4>
         </div>
         <div className="weather-cell">
-          <p><h4>Wind</h4></p>
-          <p>.</p>
-          <p>.</p>
+          <h4>Pressure</h4>
         </div>
       </div>
     );
