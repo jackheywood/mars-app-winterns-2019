@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-import TempPage from '../temp';
+import PageHeading from '../../shared/PageHeading';
+import WeatherBlock from './elements/WeatherBlock';
+import PhotoBlock from './elements/PhotoBlock';
 
 export default class HomePage extends Component {
   render() {
     return (
-      <TempPage title="Home" />
+      <div className="homepage-container">
+        <PageHeading bannerName="Welcome to Mars" />
+        <WeatherBlock />
+        <PhotoBlock />
+      </div>
     );
   }
 }
