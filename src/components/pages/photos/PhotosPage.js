@@ -3,6 +3,7 @@ import RoverNavbar from './elements/roverNavbar';
 import Rover from './elements/Rover';
 import './PhotoPage.css';
 import PageHeading from '../../shared/PageHeading';
+import PageNavButton from '../../shared/PageNavButton';
 
 export default class PhotosPage extends Component {
   render() {
@@ -11,6 +12,10 @@ export default class PhotosPage extends Component {
         <PageHeading bannerName="Here are some photos of Mars" />
         <RoverNavbar />
         <Rover />
+        <PageNavButton
+          buttonLink="/"
+          message="Return to Home Page"
+        />
       </div>
     );
   }
