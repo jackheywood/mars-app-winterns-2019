@@ -39,6 +39,7 @@
             "ObjectPattern": "never",
             "ImportDeclaration": "never",
             "ExportDeclaration": "never"
-        }]
+        }],
+        "prefer-destructuring": 0
     }
 }
