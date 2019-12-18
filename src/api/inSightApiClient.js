@@ -10,7 +10,7 @@ export default function getMarsWeatherData() {
         reject(Error('Weather API call unsuccessful'));
       } else {
         const inSightData = JSON.parse(body);
-        resolve(inSightData.sol_keys.map(solKey => new Weather(inSightData[solKey])));
+        resolve(inSightData.sol_keys.map(solKey => new Weather(inSightData[solKey], solKey)));
       }
     });
   });
