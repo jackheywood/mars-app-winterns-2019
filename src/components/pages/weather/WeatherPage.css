@@ -1,0 +1,8 @@
+.weather-column {
+  display: inline-block;
+}
+
+.weather-cell {
+  border: 1px solid black;
+  min-height: 25px;
+}

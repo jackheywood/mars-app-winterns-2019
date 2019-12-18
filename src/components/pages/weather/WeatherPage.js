@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import TempPage from '../temp';
+import WeatherTable from './elements/WeatherTable';
+import './WeatherPage.css';
+import PageHeading from '../../shared/PageHeading';
 
 export default class WeatherPage extends Component {
   render() {
     return (
-      <TempPage title="Weather" />
+      <div>
+        <PageHeading bannerName="Here is some information about the current weather" />
+        <WeatherTable />
+      </div>
     );
   }
 }
