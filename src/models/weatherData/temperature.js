@@ -1,7 +1,7 @@
 export default class Temperature {
-  constructor(data) {
-    this.max = data.mx;
-    this.min = data.mn;
-    this.avg = data.av;
+  constructor(inSightTemperatureData) {
+    this.max = inSightTemperatureData.mx;
+    this.min = inSightTemperatureData.mn;
+    this.avg = inSightTemperatureData.av;
   }
 }

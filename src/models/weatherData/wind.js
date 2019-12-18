@@ -1,8 +1,8 @@
 export default class Wind {
-  constructor(data) {
-    this.max = data.HWS.mx;
-    this.min = data.HWS.mn;
-    this.avg = data.HWS.av;
-    this.dir = data.WD.most_common.compass_point;
+  constructor(inSightWeatherData) {
+    this.max = inSightWeatherData.HWS.mx;
+    this.min = inSightWeatherData.HWS.mn;
+    this.avg = inSightWeatherData.HWS.av;
+    this.dir = inSightWeatherData.WD.most_common.compass_point;
   }
 }
