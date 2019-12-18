@@ -1,21 +1,23 @@
 .homepage-container {
   text-align: center;
   display: inline-block;
-  width: 400px;
+  width: 80%;
 }
 
 .weather-block {
   text-align: center;
-  display: inline-block;
+  display: block;
 }
 
 .photo-block{
   text-align: center;
-  display: inline-block;
+  display: block;
 }
 
 .homepage-photo{
   width: 400px;
+  margin: 0px auto;
+  display: block;
 }
 
 .temperatureElement {
