@@ -14,11 +14,12 @@ export default class HomePhoto extends Component {
 
   componentDidMount() {
     getPhotos().then(response => {
+      const homePagePhoto = response[0].cameras[0].photos[0];
       this.setState({
-        imgSrc: response[0].cameras[0].photos[0].imgSrc,
-        date: response[0].cameras[0].photos[0].earthDate,
+        imgSrc: homePagePhoto.imgSrc,
+        date: homePagePhoto.earthDate,
       });
-    });
+    }).catch();
   }
 
   render() {
