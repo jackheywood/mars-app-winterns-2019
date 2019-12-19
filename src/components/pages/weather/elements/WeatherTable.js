@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import WeatherColumn from './WeatherColumn';
 import WeatherTitleColumn from './WeatherTitleColumn';
 import getMarsWeatherData from '../../../../api/inSightApiClient';
-import Loader from '../../../shared/Loader';
+import Loader from '../../../shared/loader';
 
 export default class WeatherTable extends Component {
   constructor(props) {
