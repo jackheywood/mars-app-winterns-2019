@@ -12,16 +12,22 @@ export default class PhotosPage extends Component {
     super(props);
     this.state = {
       currentRover: roverNames.CURIOSITY,
+      currentCamera: cameraNames.Curiosity[0],
     };
   }
 
   selectRover(roverName) {
     this.setState({
       currentRover: roverName,
+      currentCamera: cameraNames[roverName.toString()][0],
     });
   }
 
-  
+  selectCamera(camera) {
+    this.setState({
+      currentCamera: camera,
+    });
+  }
 
   render() {
     return (
@@ -34,6 +40,8 @@ export default class PhotosPage extends Component {
         <h2>{this.state.currentRover}</h2>
         <Rover
           rover={this.state.currentRover}
+          currentCamera={this.state.currentCamera}
+          onClick={camera => this.selectCamera(camera)}
         />
         <PageNavButton
           buttonLink="/"
