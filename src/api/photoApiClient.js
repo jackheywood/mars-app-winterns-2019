@@ -10,26 +10,23 @@ export default function getPhotos() {
 
   const rovers = {
     curiosity: new Rover('curiosity', curiosityCameras),
-    spirirt: new Rover('spirit', spiritCameras),
+    spirit: new Rover('spirit', spiritCameras),
     opportunity: new Rover('opportunity', opportunityCameras),
   };
 
 
-  const roverPromisesObject = Object.keys(rovers).forEach(rover => (
-    getManifest(rover.name)
-      .then(manifest => getSols(manifest, rover))
-      .then(sols => getAllRoverPhotos(rover, sols))));
+  const roverPromisesObject = Object.keys(rovers).map(rover => (
+    getManifest(rover)
+      .then(manifest => getSols(manifest, rovers[rover]))
+      .then(() => getAllRoverPhotos(rovers[rover]))));
 
-  // const roverPromisesArray = rovers.map(rover => (
-  //   getManifest(rover.name)
-  //     .then(manifest => getSols(manifest, rover))
-  //     .then(sols => getAllRoverPhotos(rover, sols))));
-
-  // return Promise.all(roverPromisesObject);
+  return Promise.all(roverPromisesObject)
+    .then(() => rovers);
 }
 
 
 function getManifest(rover) {
+
   return new Promise((resolve, reject) => {
     const url = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?&api_key=${API_KEY}`;
 
@@ -45,44 +42,42 @@ function getManifest(rover) {
 }
 
 function getSols(manifest, rover) {
-  const sols = rover.cameras.map(camera => {
+  Object.keys(rover.cameras).forEach(camera => {
+
     let maxSol;
     const photoManifest = manifest.photo_manifest.photos;
+
     let i = photoManifest.length;
     while (!maxSol && i > 0) {
       i -= 1;
-      maxSol = photoManifest[i].cameras.includes(camera.shortName) ? photoManifest[i].sol : null;
+      maxSol = photoManifest[i].cameras.includes(rover.cameras[camera].shortName) ? photoManifest[i].sol : null;
     }
-    return maxSol;
+    rover.cameras[camera].maxSol = maxSol;
   });
-  return sols;
 }
 
 
-function getAllRoverPhotos(rover, sols) {
+function getAllRoverPhotos(rover) {
   const roverPromises = [];
 
   Object.keys(rover.cameras).forEach(camera => {
-    console.log(rover.cameras[camera]);
-  });
-
-  for (let i = 0; i < rover.cameras.length; i++) {
     roverPromises.push(new Promise((resolve, reject) => {
-      const sol = sols[i];
-      const camera = rover.cameras[i].shortName;
-      const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover.name}/photos?sol=${sol}&camera=${camera}&api_key=${API_KEY}`;
+      const sol = rover.cameras[camera].maxSol;
+      const cameraShortName = rover.cameras[camera].shortName;
+      const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover.name}/photos?sol=${sol}&camera=${cameraShortName}&api_key=${API_KEY}`;
       request(url, (error, response, body) => {
         if (response.statusCode !== 200) {
-          reject(Error(`failed to get data from the camera ${camera} on ${rover} on sol ${sol}`));
+          reject(Error(`failed to get data from the camera ${cameraShortName} on ${rover} on sol ${sol}`));
         } else {
           const photoJSONs = JSON.parse(body);
           const photosArray = photoJSONs.photos.map(photo => new RoverPhoto(photo.img_src, photo.earth_date));
-          photosArray.forEach(photo => rover.cameras[i].photos.push(photo));
+          photosArray.forEach(photo => rover.cameras[camera].photos.push(photo));
           resolve();
         }
       });
     }));
-  }
+  });
+
   return Promise.all(roverPromises)
     .then(() => rover);
 }
