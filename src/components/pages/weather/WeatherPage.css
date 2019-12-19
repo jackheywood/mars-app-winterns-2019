@@ -13,13 +13,22 @@
   background-color: rgb(238, 233, 157);
 }
 
+.wind-cell {
+  border: 1px solid black;
+  min-height: 25px;
+}
+.compass-photo {
+  display: inline-block;
+  right: 0px;
+  max-width:60px;
+  max-height:60px;
+  width: auto;
+  height: auto;
+}
+
 .pressure-cell {
   border: 1px solid black;
   min-height: 25px;
   background-color: rgb(176, 230, 194);
 }
 
-.wind-cell {
-  border: 1px solid black;
-  min-height: 25px;
-}

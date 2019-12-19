@@ -31,8 +31,10 @@ export default class WeatherWindCell extends Component {
         <h4>Wind Speed: {averageWind}</h4>
         <p>Max: {maxWind}</p>
         <p>Min: {minWind}</p>
-        <img src={compassImg} className="compass-photo" alt="compass" />
-        <p>Direction: {directionWind}</p>
+        <p>
+          {directionWind}
+          <img src={compassImg} className="compass-photo" alt="compass" />
+        </p>
       </div>
     );
   }
