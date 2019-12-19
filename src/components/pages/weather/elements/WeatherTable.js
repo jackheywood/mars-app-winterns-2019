@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import WeatherColumn from './WeatherColumn';
 import WeatherTitleColumn from './WeatherTitleColumn';
 import getMarsWeatherData from '../../../../api/inSightApiClient';
-
+import Loader from '../../../shared/Loader';
 
 export default class WeatherTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
       inSightWeather: null,
+      loading: false,
     };
   }
 
@@ -16,10 +17,12 @@ export default class WeatherTable extends Component {
     getMarsWeatherData()
       .then(inSightWeather => this.setState({
         inSightWeather,
-      }));
+        loading: false,
+      })).catch();
   }
 
   render() {
+    if (this.state.loading) { return <Loader />; }
     return (this.state.inSightWeather ? (
       <div>
         <WeatherTitleColumn />
