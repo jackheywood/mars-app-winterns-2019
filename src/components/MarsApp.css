@@ -3,9 +3,17 @@
 }
 
 .page-heading {
-  display: inline-block;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: xx-large;
+  background: url("../assets/images/heading_background.jpg") -80px -80px;
+  color: red;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-weight: 10px;
+  font-size: 50px;
+  font-family: fantasy;
+  letter-spacing: 2px;
+  margin: 50px auto;
+  text-align: center;
+  display: inline-block; 
 }
 
 .page-nav-button{
@@ -22,5 +30,5 @@
 }
 
 .page-nav-button:hover{
- background-color: cornflowerblue;
+  background-color: cornflowerblue;
 }
