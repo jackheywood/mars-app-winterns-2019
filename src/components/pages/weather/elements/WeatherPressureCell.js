@@ -7,7 +7,7 @@ export default class WeatherPressureCell extends Component {
     const minPressure = this.props.dayPressureData.min;
     return (
       <div className="pressure-cell">
-        <h4>Pressure: {averagePressure}</h4>
+        <h4>{averagePressure} Pa</h4>
         <p>Max: {maxPressure}</p>
         <p>Min: {minPressure}</p>
       </div>

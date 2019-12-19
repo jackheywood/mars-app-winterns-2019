@@ -6,16 +6,24 @@
   border: 1px solid black;
   min-height: 25px;
 }
+.weather-pressure-title {
+
+}
+
 
 .temperature-cell {
   border: 1px solid black;
   min-height: 25px;
-  background-color: rgb(238, 233, 157);
+  background-color: rgba(255, 255, 255, 0.459);
 }
 
 .wind-cell {
   border: 1px solid black;
-  min-height: 25px;
+  min-height: 220px;
+  min-width: 150px;
+
+  background-color: rgba(255, 255, 255, 0.459);
+
 }
 .compass-photo {
   display: inline-block;
@@ -29,6 +37,6 @@
 .pressure-cell {
   border: 1px solid black;
   min-height: 25px;
-  background-color: rgb(176, 230, 194);
+  background-color: rgba(255, 255, 255, 0.459);
 }
 

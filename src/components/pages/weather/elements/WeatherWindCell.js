@@ -28,7 +28,7 @@ export default class WeatherWindCell extends Component {
 
     return (
       <div className="wind-cell">
-        <h4>Wind Speed: {averageWind}</h4>
+        <h4>{averageWind} m/s</h4>
         <p>Max: {maxWind}</p>
         <p>Min: {minWind}</p>
         <p>
