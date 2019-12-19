@@ -1,7 +1,7 @@
 const cameraNames = {
   FHAZ: 'FHAZ',
-  CHECAM: 'CHECAM',
-  MAHIL: 'MAHIL',
+  CHEMCAM: 'CHEMCAM',
+  MAHLI: 'MAHLI',
   MARDI: 'MARDI',
   MAST: 'MAST',
   MINITES: 'MINITES',
