@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import RoverImage from './RoverImage';
 import AboutRover from './AboutRover';
 import '../PhotoPage.css';
+import CameraNavbar from './cameraNavbar/CameraNavbar';
 
 export default class Rover extends Component {
   render() {
@@ -13,6 +14,7 @@ export default class Rover extends Component {
     return (
       <div className="rover-container">
         <RoverImage photoUrlArray={dummyPhotoUrlArray} />
+        <CameraNavbar />
         <AboutRover />
       </div>
     );

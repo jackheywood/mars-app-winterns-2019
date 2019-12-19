@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CameraNavbar from './cameraNavbar';
+
 import '../PhotoPage.css';
 import RoverImageButton from './RoverImageButton';
 
@@ -31,11 +31,22 @@ export default class RoverImage extends Component {
   render() {
     return (
       <div className="rover-image">
-        <RoverImageButton className="leftButton" direction={'<'} onClick={() => this.decrementIndex()} />
-        <img className="camera-capture" src={this.props.photoUrlArray[this.state.index]} alt="Mars" />
-        <RoverImageButton className="rightButton" direction={'>'} onClick={() => this.incrementIndex()} />
-        <CameraNavbar />
-        <h4>Photo {this.state.index + 1} / {this.props.photoUrlArray.length} </h4>
+        <RoverImageButton
+          className="left-button"
+          direction="<"
+          onClick={() => this.decrementIndex()}
+        />
+        <img
+          className="camera-capture"
+          src={this.props.photoUrlArray[this.state.index]}
+          alt="Mars"
+        />
+        <RoverImageButton
+          className="right-button"
+          direction=">"
+          onClick={() => this.incrementIndex()}
+        />
+        <h4>Photo {this.state.index + 1} / {this.props.photoUrlArray.length}</h4>
       </div>
     );
   }
