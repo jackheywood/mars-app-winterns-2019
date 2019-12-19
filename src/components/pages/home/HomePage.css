@@ -13,7 +13,11 @@
   display: block;
 }
 
-.homepage-photo{
+.homepage-photo {
+  padding: 50px 0;
+}
+
+.homepage-photo img{
   width: 400px;
   margin: 0px auto;
   display: block;
@@ -29,6 +33,13 @@
   padding: 0px 15px;
 }
 
+.homepage-photo p{
+  font-size: small;
+  text-align: center;
+  vertical-align: center;
+  background-color: ivory;
+}
+  
 .wind-element {
   display: inline-block;
   padding: 0px 15px;

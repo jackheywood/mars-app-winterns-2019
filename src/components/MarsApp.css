@@ -1,5 +1,10 @@
 .mars-app {
   text-align: center;
+  background-image: url('../assets/images/background.jfif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 1060px;
 }
 
 .page-heading {
@@ -23,7 +28,7 @@
   padding: 30px 16px;
   margin: 0px auto;
   text-decoration: none;
-  background-color: powderblue;
+  background-color: rgba(71, 71, 71, 0.322);
   width: 400px;
   font-size: large;
   font-family: fantasy;
