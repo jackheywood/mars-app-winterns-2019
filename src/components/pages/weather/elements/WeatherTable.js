@@ -29,7 +29,7 @@ export default class WeatherTable extends Component {
 
   render() {
     return (this.state.inSightWeather ? (
-      <div>
+      <div className="weather-table">
         <WeatherTitleColumn />
         <WeatherColumn dayWeatherData={this.state.inSightWeather[0]} />
         <WeatherColumn dayWeatherData={this.state.inSightWeather[1]} />

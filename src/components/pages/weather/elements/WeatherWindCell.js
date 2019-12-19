@@ -18,9 +18,9 @@ import compassNNW from './compassPhotos/compassNNW.png';
 
 export default class WeatherWindCell extends Component {
   render() {
-    const averageWind = this.props.dayWindData.avg;
-    const maxWind = this.props.dayWindData.max;
-    const minWind = this.props.dayWindData.min;
+    const averageWind = this.props.dayWindData.avg.toFixed(3);
+    const maxWind = this.props.dayWindData.max.toFixed(3);
+    const minWind = this.props.dayWindData.min.toFixed(3);
     const directionWind = this.props.dayWindData.dir;
     const IMGARRAY = { N: compassN, NNE: compassNNE, NE: compassNE, ENE: compassENE, E: compassE, ESE: compassESE, SE: compassSE, SSE: compassSSE, S: compassS, SSW: compassSSW, SW: compassSW, WSW: compassWSW, W: compassW, WNW: compassWNW, NW: compassNW, NNW: compassNNW };
     // const compassImg = IMGARRAY.directionWind;
