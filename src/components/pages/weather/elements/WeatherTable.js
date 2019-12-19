@@ -4,6 +4,7 @@ import WeatherTitleColumn from './WeatherTitleColumn';
 import getMarsWeatherData from '../../../../api/inSightApiClient';
 // import dummyWeatherData from './weatherDummyData';
 
+import Loader from '../../../shared/loader';
 
 export default class WeatherTable extends Component {
   // constructor(props) {
@@ -23,7 +24,7 @@ export default class WeatherTable extends Component {
     getMarsWeatherData()
       .then(inSightWeather => this.setState({
         inSightWeather,
-      }));
+      })).catch();
   }
 
   render() {
@@ -39,7 +40,7 @@ export default class WeatherTable extends Component {
         <WeatherColumn dayWeatherData={this.state.inSightWeather[6]} />
       </div>
     ) : (
-      <div>This will be a loading spinner.</div>
+      <Loader />
     ));
   }
 }
