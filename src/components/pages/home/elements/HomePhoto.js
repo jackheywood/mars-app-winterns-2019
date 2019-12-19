@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import getPhotos from '../../../../api/photoApiClient';
-
-const defaultSrc = 'https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02540/opgs/edr/fcam/FLB_622990123EDR_F0763002FHAZ00341M_.JPG';
+import Loader from '../../../shared/loader';
 
 export default class HomePhoto extends Component {
   constructor() {
@@ -30,10 +29,7 @@ export default class HomePhoto extends Component {
           <p>A photo taken by Curiosity`s FHAZ camera at {this.state.date}</p>
         </div>
       ) : (
-        <div className="homepage-photo">
-          <img src={defaultSrc} alt="default homepage mars" />
-          <p>A photo taken by Curiosity`s FHAZ camera at 2019-09-28</p>
-        </div>
+        <Loader />
       )
     );
   }
