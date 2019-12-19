@@ -33,6 +33,10 @@
         "arrow-parens": [2, "as-needed"],
         "no-use-before-define": 0,
         "prefer-arrow-callback": 1,
-        "eol-last": 1
+        "eol-last": 1,
+        "object-curly-newline": 0,
+        "prefer-destructuring": 0,
+        "no-plusplus": 0,
+        "max-len": 0
     }
 }

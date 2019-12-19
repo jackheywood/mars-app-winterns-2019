@@ -6,12 +6,13 @@ import WeatherPressureCell from './WeatherPressureCell';
 
 export default class WeatherColumn extends Component {
   render() {
+    const { earthDate, season, temp, wind, pressure } = this.props.dayWeatherData;
     return (
       <div className="weather-column">
-        <WeatherHeadingCell day={this.props.day} />
-        <WeatherTempCell day={this.props.day} />
-        <WeatherWindCell day={this.props.day} />
-        <WeatherPressureCell day={this.props.day} />
+        <WeatherHeadingCell earthDate={earthDate} season={season} />
+        <WeatherTempCell dayTemperatureData={temp} />
+        <WeatherWindCell dayWindData={wind} />
+        <WeatherPressureCell dayPressureData={pressure} />
       </div>
     );
   }
