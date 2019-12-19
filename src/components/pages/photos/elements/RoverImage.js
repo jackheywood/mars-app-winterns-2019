@@ -3,7 +3,6 @@ import '../PhotoPage.css';
 import RoverImageButton from './RoverImageButton';
 
 export default class RoverImage extends Component {
-
   render() {
     return (
       <div className="rover-image">
