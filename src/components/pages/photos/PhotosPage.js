@@ -3,7 +3,7 @@ import RoverNavbar from './elements/roverNavbar';
 import Rover from './elements/Rover';
 import './PhotoPage.css';
 import roverNames from '../../../enums/roverNames';
-import cameraNames from '../../../enums/cameraNames'
+import cameraNames from '../../../enums/cameraNames';
 import PageHeading from '../../shared/PageHeading';
 import PageNavButton from '../../shared/PageNavButton';
 
@@ -12,7 +12,6 @@ export default class PhotosPage extends Component {
     super(props);
     this.state = {
       currentRover: roverNames.CURIOSITY,
-      currentCamera: cameraNames.FHAZ,
     };
   }
 
@@ -22,11 +21,7 @@ export default class PhotosPage extends Component {
     });
   }
 
-  selectCamera(cameraName) {
-    this.setState({
-      currentCamera: cameraName,
-    });
-  }
+  
 
   render() {
     return (
@@ -37,8 +32,10 @@ export default class PhotosPage extends Component {
         />
         {/*the li is for us to check clicking on the buttons does change the state */}
 
-        <h2>{this.state.currentRover} {this.state.currentCamera}</h2>
-        <Rover />
+        <h2>{this.state.currentRover}</h2>
+        <Rover
+          rover={this.state.currentRover}
+        />
         <PageNavButton
           buttonLink="/"
           message="Return to Home Page"
