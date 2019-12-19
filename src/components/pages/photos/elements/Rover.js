@@ -32,6 +32,11 @@ export default class Rover extends Component {
     return this.state.roverPhotosArray[rover].cameras[camera].photos.map(photo => photo.imgSrc);
   }
 
+  getEarthDate() {
+    const rover = this.props.rover.toString();
+    const camera = this.props.currentCamera.toString();
+    return this.state.roverPhotosArray[rover].cameras[camera].photos.map(photo => photo.earthDate);
+  }
 
   render() {
     return this.state.roverPhotosArray ? (
@@ -43,7 +48,7 @@ export default class Rover extends Component {
           onClick={this.props.onClick}
           rover={this.props.rover}
         />
-        <h2>{this.props.rover} {this.props.currentCamera}</h2>
+        <h2>{this.props.currentCamera}: {this.getEarthDate()[0]}</h2>
         <AboutRover />
       </div>
     ) : (

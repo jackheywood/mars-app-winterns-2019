@@ -14,7 +14,7 @@ export default class HomePhoto extends Component {
 
   componentDidMount() {
     getPhotos().then(response => {
-      const homePagePhoto = response[0].cameras[0].photos[0];
+      const homePagePhoto = response.Curiosity.cameras.FHAZ.photos[0];
       this.setState({
         imgSrc: homePagePhoto.imgSrc,
         date: homePagePhoto.earthDate,
