@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../../../../assets/images/logo.svg';
 import '../HomePage.css';
 import PageNavButton from '../../../shared/PageNavButton';
 import HomePhoto from './HomePhoto';

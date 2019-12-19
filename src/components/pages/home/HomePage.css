@@ -14,6 +14,17 @@
   display: inline-block;
 }
 
-.homepage-photo{
+.homepage-photo {
+  padding: 50px 0;
+}
+
+.homepage-photo img{
   width: 400px;
+}
+
+.homepage-photo p{
+  font-size: small;
+  text-align: center;
+  vertical-align: center;
+  background-color: ivory;
 }
