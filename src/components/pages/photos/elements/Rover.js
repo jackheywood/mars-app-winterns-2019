@@ -10,22 +10,34 @@ export default class Rover extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentCamera: cameraNames.FHAZ,
+      currentCamera: cameraNames[this.props.rover.toString()][0],
+      roverName: this.props.rover,
     };
   }
 
-  selectCamera(cameraName) {
+  selectCamera(camera) {
     this.setState({
-      currentCamera: cameraName,
+      currentCamera: camera,
+    });
+  }
+
+  resetRover() {
+    this.setState({
+      roverName: this.props.rover,
+      currentCamera: cameraNames[this.props.rover.toString()][0],
     });
   }
 
   render() {
+    if (this.props.rover !== this.state.roverName) {
+      this.resetRover();
+    }
     return (
       <div className="rover-container">
         <RoverImage />
         <CameraNavbar
-          onClick={cameraName => this.selectCamera(cameraName)}
+          onClick={camera => this.selectCamera(camera)}
+          rover={this.props.rover}
         />
         <h2>{this.props.rover} {this.state.currentCamera}</h2>
         <AboutRover />

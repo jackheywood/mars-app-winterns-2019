@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import RoverCameraButton from './RoverCameraButton';
 import './CameraNavbar.css';
-
-import cameraNames from '../../../../../enums/cameraNames'
+import cameraNames from '../../../../../enums/cameraNames';
 
 export default class CameraNavbar extends Component {
   render() {
-    const roverCameraNames = Object.values(cameraNames);
+    let { rover } = this.props;
+    rover = rover.toString();
+
+    const roverCameraNames = Object.values(cameraNames[rover]);
     const buttons = roverCameraNames.map(camera => (
       <RoverCameraButton
         key={camera}
@@ -21,5 +23,4 @@ export default class CameraNavbar extends Component {
       </div>
     );
   }
-
 }
