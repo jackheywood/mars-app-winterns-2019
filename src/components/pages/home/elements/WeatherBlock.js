@@ -4,6 +4,7 @@ import WeatherAttributes from './weatherAttributes/WeatherAttributes';
 import getMarsWeatherData from '../../../../api/inSightApiClient';
 import '../HomePage.css';
 import PageNavButton from '../../../shared/PageNavButton';
+import Loader from '../../../shared/loader';
 
 export default class WeatherBlock extends Component {
   constructor(props) {
@@ -41,7 +42,7 @@ export default class WeatherBlock extends Component {
         />
       </div>
     ) : (
-      <div>This will be aloading spinner</div>
+      <Loader />
     );
   }
 }
