@@ -11,7 +11,8 @@ export default class AboutRover extends Component {
   render() {
     return (
       <div className="about-container">
-        <li> {this.aboutText[this.props.currentRover]} {this.aboutText[this.props.currentCamera]}</li>
+        <p> {this.aboutText[this.props.currentRover]} </p>
+        <p> {this.aboutText[this.props.currentCamera]}</p>
       </div>
     );
   }
