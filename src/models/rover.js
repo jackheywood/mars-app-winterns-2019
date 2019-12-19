@@ -6,7 +6,6 @@ function getCamerasObject(cameras) {
     camerasObject[cameras[i]] = new Camera(cameras[i]);
   }
   return camerasObject;
-
 }
 
 

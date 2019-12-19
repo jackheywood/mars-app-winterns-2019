@@ -9,9 +9,9 @@ export default function getPhotos() {
   const opportunityCameras = ['FHAZ', 'RHAZ', 'NAVCAM', 'PANCAM', 'MINITES'];
 
   const rovers = {
-    curiosity: new Rover('curiosity', curiosityCameras),
-    spirit: new Rover('spirit', spiritCameras),
-    opportunity: new Rover('opportunity', opportunityCameras),
+    Curiosity: new Rover('curiosity', curiosityCameras),
+    Spirit: new Rover('spirit', spiritCameras),
+    Opportunity: new Rover('opportunity', opportunityCameras),
   };
 
 

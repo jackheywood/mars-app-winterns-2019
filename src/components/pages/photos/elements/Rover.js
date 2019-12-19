@@ -22,33 +22,23 @@ export default class Rover extends Component {
   getData() {
     getPhotos()
       .then(rovers => this.setState({
-        roversPhotosArray: rovers,
+        roverPhotosArray: rovers,
       }));
   }
 
   getCameraPhotos() {
     const rover = this.props.rover.toString();
-    const roverPhotosArray = this.state.roverPhotosArray;
-
-    switch (rover) {
-      case ('Curiosity'):
-        break;
-      case ('Spirit'):
-        break;
-      case ('Opportunity'):
-        break;
-      default:
-  
-    }
-
-    return;
+    const camera = this.props.currentCamera.toString();
+    return this.state.roverPhotosArray[rover].cameras[camera].photos.map(photo => photo.imgSrc);
   }
 
 
   render() {
-    return this.state.photoUrlArray ? (
+    return this.state.roverPhotosArray ? (
       <div className="rover-container">
-        <RoverImage />
+        <RoverImage
+          photoUrlArray={this.getCameraPhotos()}
+        />
         <CameraNavbar
           onClick={this.props.onClick}
           rover={this.props.rover}
