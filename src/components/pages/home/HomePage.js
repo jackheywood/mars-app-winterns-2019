@@ -3,6 +3,7 @@ import PageHeading from '../../shared/PageHeading';
 import WeatherBlock from './elements/WeatherBlock';
 import PhotoBlock from './elements/PhotoBlock';
 
+
 export default class HomePage extends Component {
   render() {
     return (
