@@ -14,10 +14,10 @@ export default function getPhotos() {
     new Rover('opportunity', opportunityCameras),
   ];
 
-  const roverPromisesArray = rovers.map(rover =>
+  const roverPromisesArray = rovers.map(rover => (
     getManifest(rover.name)
       .then(manifest => getSols(manifest, rover))
-      .then(sols => getAllRoverPhotos(rover, sols)));
+      .then(sols => getAllRoverPhotos(rover, sols))));
 
   return Promise.all(roverPromisesArray);
 }
@@ -54,8 +54,9 @@ function getSols(manifest, rover) {
 
 
 function getAllRoverPhotos(rover, sols) {
-  return new Promise((resolve, reject) => {
-    for (let i = 0; i < rover.cameras.length; i++) {
+  const roverPromises = [];
+  for (let i = 0; i < rover.cameras.length; i++) {
+    roverPromises.push(new Promise((resolve, reject) => {
       const sol = sols[i];
       const camera = rover.cameras[i].shortName;
       const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover.name}/photos?sol=${sol}&camera=${camera}&api_key=${API_KEY}`;
@@ -65,10 +66,12 @@ function getAllRoverPhotos(rover, sols) {
         } else {
           const photoJSONs = JSON.parse(body);
           const photosArray = photoJSONs.photos.map(photo => new RoverPhoto(photo.img_src, photo.earth_date));
-          rover.cameras[i].photos.push(photosArray);
+          photosArray.forEach(photo => rover.cameras[i].photos.push(photo));
+          resolve();
         }
       });
-    }
-    resolve(rover);
-  });
+    }));
+  }
+  return Promise.all(roverPromises)
+    .then(() => rover);
 }
