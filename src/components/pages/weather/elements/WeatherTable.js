@@ -9,7 +9,6 @@ export default class WeatherTable extends Component {
     super(props);
     this.state = {
       inSightWeather: null,
-      loading: false,
     };
   }
 
@@ -17,12 +16,10 @@ export default class WeatherTable extends Component {
     getMarsWeatherData()
       .then(inSightWeather => this.setState({
         inSightWeather,
-        loading: false,
       })).catch();
   }
 
   render() {
-    if (this.state.loading) { return <Loader />; }
     return (this.state.inSightWeather ? (
       <div>
         <WeatherTitleColumn />
@@ -35,7 +32,7 @@ export default class WeatherTable extends Component {
         <WeatherColumn dayWeatherData={this.state.inSightWeather[6]} />
       </div>
     ) : (
-      <div>This will be a loading spinner.</div>
+      <Loader />
     ));
   }
 }
