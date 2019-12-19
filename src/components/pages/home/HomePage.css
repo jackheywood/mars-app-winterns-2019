@@ -1,17 +1,16 @@
 .homepage-container {
   text-align: center;
-  display: inline-block;
-  width: 400px;
+  display: block;
 }
 
 .weather-block {
   text-align: center;
-  display: inline-block;
+  display: block;
 }
 
 .photo-block{
   text-align: center;
-  display: inline-block;
+  display: block;
 }
 
 .homepage-photo{

@@ -1,11 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300);
+
 .mars-app {
   text-align: center;
 }
 
 .page-heading {
-  display: inline-block;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: xx-large;
+  background: url(http://apod.nasa.gov/apod/image/0603/coma_misti.jpg) -80px -80px;
+  color: red;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-weight: 10px;
+  font-size: 50px;
+  font-family: fantasy;
+  letter-spacing: 2px;
+  margin: 50px auto;
+  text-align: center;
+  display: inline-block; 
 }
 
 .page-nav-button{
@@ -21,5 +31,5 @@
 }
 
 .page-nav-button:hover{
- background-color: cornflowerblue;
+  background-color: cornflowerblue;
 }
