@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import WeatherColumn from './WeatherColumn';
 import WeatherTitleColumn from './WeatherTitleColumn';
-import getMarsWeatherDataDummy from '../../../../api/inSightApiClientDummy';
-// import fullDummyData from '../../../../api/fullWeatherDummyData';
-
 import getMarsWeatherData from '../../../../api/inSightApiClient';
 import Loader from '../../../shared/loader';
 
@@ -16,7 +13,7 @@ export default class WeatherTable extends Component {
   }
 
   componentDidMount() {
-    getMarsWeatherDataDummy()
+    getMarsWeatherData()
       .then(inSightWeather => this.setState({
         inSightWeather,
       })).catch();
