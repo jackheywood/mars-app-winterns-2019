@@ -26,7 +26,6 @@ export default function getPhotos() {
 
 
 function getManifest(rover) {
-
   return new Promise((resolve, reject) => {
     const url = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?&api_key=${API_KEY}`;
 
@@ -43,7 +42,6 @@ function getManifest(rover) {
 
 function getSols(manifest, rover) {
   Object.keys(rover.cameras).forEach(camera => {
-
     let maxSol;
     const photoManifest = manifest.photo_manifest.photos;
 
