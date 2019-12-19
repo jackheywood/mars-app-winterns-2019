@@ -1,11 +1,24 @@
 .mars-app {
   text-align: center;
+  background-image: url('../assets/images/background.jfif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 1060px;
 }
 
 .page-heading {
-  display: inline-block;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: xx-large;
+  background: url("../assets/images/heading_background.jpg") -80px -80px;
+  color: red;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-weight: 10px;
+  font-size: 50px;
+  font-family: fantasy;
+  letter-spacing: 2px;
+  margin: 50px auto;
+  text-align: center;
+  display: inline-block; 
 }
 
 .page-nav-button{
@@ -13,13 +26,14 @@
   color: black;
   text-align: center;
   padding: 30px 16px;
+  margin: 0px auto;
   text-decoration: none;
-  background-color: powderblue;
+  background-color: rgba(71, 71, 71, 0.322);
   width: 400px;
   font-size: large;
   font-family: fantasy;
 }
 
 .page-nav-button:hover{
- background-color: cornflowerblue;
+  background-color: cornflowerblue;
 }
