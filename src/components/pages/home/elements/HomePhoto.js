@@ -20,7 +20,8 @@ export default class HomePhoto extends Component {
     return (
       this.state.data ? (
         <div>
-          <img src={testsrc} className="homepage-photo" alt="homepage mars photo" />
+          <img src={testsrc} className="homepage-photo" alt="homepage mars" />
+          <p>A recent photo taken by Curiosity's FHAZ camera</p>
         </div>
       ) : (
         <div />
