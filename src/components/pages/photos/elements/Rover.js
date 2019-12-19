@@ -10,7 +10,7 @@ export default class Rover extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      photoUrlArray: null,
+      roverPhotosArray: null,
     };
   }
 
@@ -18,13 +18,36 @@ export default class Rover extends Component {
     this.getData();
   }
 
+
   getData() {
     getPhotos()
-      .then(rovers => console.log(rovers))
+      .then(rovers => this.setState({
+        roversPhotosArray: rovers,
+      }));
   }
 
+  getCameraPhotos() {
+    const rover = this.props.rover.toString();
+    const roverPhotosArray = this.state.roverPhotosArray;
+
+    switch (rover) {
+      case ('Curiosity'):
+        console.log(roverPhotosArray[0].cameras[camera]);
+        break;
+      case ('Spirit'):
+        break;
+      case ('Opportunity'):
+        break;
+      default:
+  
+    }
+
+    return roverPhotos;
+  }
+
+
   render() {
-    return this.state.photoUrlArray? (
+    return this.state.photoUrlArray ? (
       <div className="rover-container">
         <RoverImage />
         <CameraNavbar
@@ -34,7 +57,7 @@ export default class Rover extends Component {
         <h2>{this.props.rover} {this.props.currentCamera}</h2>
         <AboutRover />
       </div>
-    ):(
+    ) : (
       <div>this will be a loading spinner</div>
     );
   }

@@ -4,7 +4,9 @@ import RoverPhoto from '../models/roverPhoto';
 import Rover from '../models/rover';
 
 export default function getPhotos() {
- 
+  const curiosityCameras = ['FHAZ', 'RHAZ', 'MAST', 'CHEMCAM', 'MAHLI', 'MARDI', 'NAVCAM'];
+  const spiritCameras = ['FHAZ', 'RHAZ', 'NAVCAM', 'PANCAM', 'MINITES'];
+  const opportunityCameras = ['FHAZ', 'RHAZ', 'NAVCAM', 'PANCAM', 'MINITES'];
 
   const rovers = [
     new Rover('curiosity', curiosityCameras),
