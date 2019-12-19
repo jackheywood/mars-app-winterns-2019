@@ -1,19 +1,46 @@
 .homepage-container {
   text-align: center;
-  display: inline-block;
-  width: 400px;
+  display: block;
 }
 
 .weather-block {
   text-align: center;
-  display: inline-block;
+  display: block;
 }
 
 .photo-block{
   text-align: center;
-  display: inline-block;
+  display: block;
 }
 
-.homepage-photo{
+.homepage-photo {
+  padding: 50px 0;
+}
+
+.homepage-photo img{
   width: 400px;
+  margin: 0px auto;
+  display: block;
+}
+
+.temperature-element {
+  display: inline-block;
+  padding: 0px 15px;
+}
+
+.pressure-element {
+  display: inline-block;
+  padding: 0px 15px;
+}
+
+.homepage-photo p{
+  font-size: small;
+  text-align: center;
+  vertical-align: center;
+  background-color: ivory;
+}
+  
+.wind-element {
+  display: inline-block;
+  padding: 0px 15px;
 }
