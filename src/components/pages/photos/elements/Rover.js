@@ -32,7 +32,6 @@ export default class Rover extends Component {
 
     switch (rover) {
       case ('Curiosity'):
-        console.log(roverPhotosArray[0].cameras[camera]);
         break;
       case ('Spirit'):
         break;
@@ -42,7 +41,7 @@ export default class Rover extends Component {
   
     }
 
-    return roverPhotos;
+    return;
   }
 
 

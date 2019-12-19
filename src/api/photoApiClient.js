@@ -8,18 +8,24 @@ export default function getPhotos() {
   const spiritCameras = ['FHAZ', 'RHAZ', 'NAVCAM', 'PANCAM', 'MINITES'];
   const opportunityCameras = ['FHAZ', 'RHAZ', 'NAVCAM', 'PANCAM', 'MINITES'];
 
-  const rovers = [
-    new Rover('curiosity', curiosityCameras),
-    new Rover('spirit', spiritCameras),
-    new Rover('opportunity', opportunityCameras),
-  ];
+  const rovers = {
+    curiosity: new Rover('curiosity', curiosityCameras),
+    spirirt: new Rover('spirit', spiritCameras),
+    opportunity: new Rover('opportunity', opportunityCameras),
+  };
 
-  const roverPromisesArray = rovers.map(rover => (
+
+  const roverPromisesObject = Object.keys(rovers).forEach(rover => (
     getManifest(rover.name)
       .then(manifest => getSols(manifest, rover))
       .then(sols => getAllRoverPhotos(rover, sols))));
 
-  return Promise.all(roverPromisesArray);
+  // const roverPromisesArray = rovers.map(rover => (
+  //   getManifest(rover.name)
+  //     .then(manifest => getSols(manifest, rover))
+  //     .then(sols => getAllRoverPhotos(rover, sols))));
+
+  // return Promise.all(roverPromisesObject);
 }
 
 
@@ -55,6 +61,11 @@ function getSols(manifest, rover) {
 
 function getAllRoverPhotos(rover, sols) {
   const roverPromises = [];
+
+  Object.keys(rover.cameras).forEach(camera => {
+    console.log(rover.cameras[camera]);
+  });
+
   for (let i = 0; i < rover.cameras.length; i++) {
     roverPromises.push(new Promise((resolve, reject) => {
       const sol = sols[i];
