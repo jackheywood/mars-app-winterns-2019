@@ -6,7 +6,6 @@ import roverNames from '../../../enums/roverNames';
 import PageHeading from '../../shared/PageHeading';
 import PageNavButton from '../../shared/PageNavButton';
 
-
 export default class PhotosPage extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +19,6 @@ export default class PhotosPage extends Component {
       currentRover: roverName,
     });
   }
-
 
   render() {
     return (

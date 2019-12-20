@@ -11,5 +11,4 @@ const cameraNames = {
 
 };
 
-
 export default cameraNames;

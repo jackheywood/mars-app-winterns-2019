@@ -19,7 +19,6 @@ export default class Rover extends Component {
     };
   }
 
-
   componentDidMount() {
     this.getData();
   }

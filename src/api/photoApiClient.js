@@ -16,7 +16,6 @@ export default function getPhotos() {
     [roverNames.OPPORTUNITY]: new Rover(roverNames.OPPORTUNITY, opportunityCameras),
   };
 
-
   const roverPromisesObject = Object.keys(rovers).map(rover => (
     getManifest(rover)
       .then(manifest => getSols(manifest, rovers[rover]))
@@ -25,7 +24,6 @@ export default function getPhotos() {
   return Promise.all(roverPromisesObject)
     .then(() => rovers);
 }
-
 
 function getManifest(rover) {
   return new Promise((resolve, reject) => {
@@ -55,7 +53,6 @@ function getSols(manifest, rover) {
     rover.cameras[camera].maxSol = maxSol;
   });
 }
-
 
 function getAllRoverPhotos(rover) {
   const roverPromises = [];
