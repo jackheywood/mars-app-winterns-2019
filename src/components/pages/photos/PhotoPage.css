@@ -21,6 +21,8 @@
   flex-wrap:wrap;
   justify-content:center;
   padding: 20px 0;
+
+  
 }
 
 .rover-image .camera-capture {
@@ -33,11 +35,11 @@
 .about-container {
   padding: 20px 0;
   text-align: center;
-  display: block;
+  display: inline-block;
   align-items: center;
   justify-content: center;
-  width: 610px;
-  background-color: cornsilk;
+  width: auto;
+  background-color: rgba(255, 248, 220, 0);
 }
 
 .rover-image-button {
@@ -71,5 +73,11 @@
   justify-content: center;
   padding-left: 20px;
  
+  
+}
+
+.image-and-intro-container{
+  display: flex;
+  background-color: rgba(148, 148, 148, 0.432);
   
 }
