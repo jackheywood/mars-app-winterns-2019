@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import request from 'request';
 import Weather from '../models/weather';
 import API_KEY from './apiKey';
@@ -7,7 +8,8 @@ export default function getMarsWeatherData() {
   return new Promise((resolve, reject) => {
     request(URL, (error, response, body) => {
       if (response.statusCode !== 200) {
-        reject(Error('Weather API call unsuccessful'));
+        alert('Weather API call unsuccessful');
+        reject();
       } else {
         const inSightData = JSON.parse(body);
         resolve(inSightData.sol_keys.map(solKey => new Weather(inSightData[solKey], solKey)));
