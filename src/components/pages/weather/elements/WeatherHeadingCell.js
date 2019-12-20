@@ -6,21 +6,28 @@ import winterImage from '../../../../assets/images/winter.jpg';
 
 export default class WeatherHeadingCell extends Component {
   render() {
+    const season = this.props.season || null;
     const date = new Date(this.props.earthDate);
-    const season = this.props.season;
+
     const imageSrcs = {
       spring: springImage,
       summer: summerImage,
       autumn: autumnImage,
       winter: winterImage,
     };
-    const imgSrc = imageSrcs[season];
-    return (
+    const imgSrc = season ? imageSrcs[season] : null;
+
+    return (this.props.earthDate ? (
       <div className="weather-cell">
         <h4>{date.getDate()}/{date.getMonth()}/{date.getFullYear()}</h4>
         <p>({season})</p>
         <img src={imgSrc} alt="season" />
       </div>
-    );
+    ) : (
+      <div className="weather-cell">
+        <h4>unknown date</h4>
+        <p>({season})</p>
+      </div>
+    ));
   }
 }

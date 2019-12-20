@@ -1,52 +1,49 @@
 .photo-page {
   text-align: center;
-  display: inline-block;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  vertical-align: middle;
-  width: 700px;
 }
 
 .rover-container {
-  text-align: center;
-  display: inline-block;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  vertical-align: middle;
+  text-align: center;
+}
+
+.image-and-intro {
+  display: inline-block;
 }
 
 .rover-image {
-  display:flex;
+  margin: 10px auto;
+  display: flex;
   align-items: center;
-  flex-wrap:wrap;
   justify-content:center;
-  padding: 20px 0;
-
-  
 }
 
 .rover-image .camera-capture {
   width: 540px;
   height: 540px;
   border-radius: 10px;
-
+  align-items: center;
 }
 
 .about-container {
-  padding: 20px 0;
-  text-align: center;
-  display: inline-block;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  background-color: rgba(255, 248, 220, 0);
+  display: block;
+  width: 600px;
+  background-color: rgba(212, 212, 212, 0.486);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0px auto;
 }
 
 .rover-image-button {
   z-index:1;
   position:relative;
-  display: flex;
   align-items: center;
+  vertical-align: center;
   border:none;
   border-radius: 100%;
   height: 50px;
@@ -57,6 +54,11 @@
   vertical-align: middle;
   padding: 0px;
   box-shadow: 2.5px 2.5px 2.5px grey;
+}
+
+.rover-image-button:hover {
+  background-color: rgba(117, 180, 58, 0.678);
+  border:0;
 }
 
 .photo-index {
@@ -72,12 +74,4 @@
   text-align: center;
   justify-content: center;
   padding-left: 20px;
- 
-  
-}
-
-.image-and-intro-container{
-  display: flex;
-  background-color: rgba(148, 148, 148, 0.432);
-  
 }

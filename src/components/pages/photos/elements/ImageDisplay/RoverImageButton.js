@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../PhotoPage.css';
+import '../../PhotoPage.css';
 
 export default class RoverImageButton extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class RoverImageButton extends Component {
         className="rover-image-button"
         onClick={this.props.onClick}
       >
-        <div className='button-direction'>
+        <div className="button-direction">
           <h3>{this.props.direction}</h3>
         </div>
       </button>
