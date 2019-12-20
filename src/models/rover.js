@@ -2,9 +2,9 @@ import Camera from './camera';
 
 function getCamerasObject(cameras) {
   const camerasObject = {};
-  for (let i = 0; i < cameras.length; i++) {
-    camerasObject[cameras[i]] = new Camera(cameras[i]);
-  }
+  cameras.forEach(camera => {
+    camerasObject[camera] = new Camera(camera);
+  });
   return camerasObject;
 }
 

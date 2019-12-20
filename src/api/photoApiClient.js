@@ -2,16 +2,18 @@ import request from 'request';
 import API_KEY from './apiKey';
 import RoverPhoto from '../models/roverPhoto';
 import Rover from '../models/rover';
+import roverNames from '../enums/roverNames';
+import cameraNames from '../enums/cameraNames';
 
 export default function getPhotos() {
-  const curiosityCameras = ['FHAZ', 'RHAZ', 'MAST', 'CHEMCAM', 'MAHLI', 'MARDI', 'NAVCAM'];
-  const spiritCameras = ['FHAZ', 'RHAZ', 'NAVCAM', 'PANCAM', 'MINITES'];
-  const opportunityCameras = ['FHAZ', 'RHAZ', 'NAVCAM', 'PANCAM', 'MINITES'];
+  const curiosityCameras = [cameraNames.FHAZ, cameraNames.RHAZ, cameraNames.MAST, cameraNames.CHEMCAM, cameraNames.MAHLI, cameraNames.MARDI, cameraNames.NAVCAM];
+  const spiritCameras = [cameraNames.FHAZ, cameraNames.RHAZ, cameraNames.NAVCAM, cameraNames.PANCAM, cameraNames.MINITES];
+  const opportunityCameras = [cameraNames.FHAZ, cameraNames.RHAZ, cameraNames.NAVCAM, cameraNames.PANCAM, cameraNames.MINITES];
 
   const rovers = {
-    Curiosity: new Rover('curiosity', curiosityCameras),
-    Spirit: new Rover('spirit', spiritCameras),
-    Opportunity: new Rover('opportunity', opportunityCameras),
+    [roverNames.CURIOSITY]: new Rover(roverNames.CURIOSITY.toLowerCase(), curiosityCameras),
+    [roverNames.SPIRIT]: new Rover(roverNames.SPIRIT.toLowerCase(), spiritCameras),
+    [roverNames.OPPORTUNITY]: new Rover(roverNames.OPPORTUNITY.toLowerCase(), opportunityCameras),
   };
 
 
