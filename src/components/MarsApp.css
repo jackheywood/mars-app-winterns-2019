@@ -1,10 +1,13 @@
+html { 
+  background: url('../assets/images/background.jfif') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .mars-app {
   text-align: center;
-  background-image: url('../assets/images/background.jfif');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: auto;
 }
 
 .page-heading {
@@ -14,9 +17,9 @@
   -webkit-background-clip: text;
   font-weight: 10px;
   font-size: 50px;
-  font-family: fantasy;
+  font-family: fantasy, sans-serif, cursive;
   letter-spacing: 2px;
-  margin: 50px auto;
+  margin: 50px auto 50px auto;
   text-align: center;
   display: inline-block; 
 }
@@ -26,14 +29,14 @@
   color: black;
   text-align: center;
   padding: 30px 16px;
-  margin: 0px auto;
+  margin: 30px auto;
   text-decoration: none;
-  background-color: rgba(71, 71, 71, 0.322);
+  background-color: rgba(71, 71, 71, 0.4);
   width: 400px;
   font-size: large;
-  font-family: fantasy;
+  font-family: fantasy, sans-serif, cursive;
 }
 
 .page-nav-button:hover{
-  background-color: cornflowerblue;
+  background-color: rgba(228, 228, 228, 0.4);
 }

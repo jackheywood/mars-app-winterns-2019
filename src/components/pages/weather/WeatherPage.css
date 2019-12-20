@@ -1,26 +1,122 @@
+.weather-table {
+  display: block;
+  text-align: center;
+  padding: 10px;
+}
+
 .weather-column {
   display: inline-block;
+  vertical-align: top;
+  background-color: rgba(169, 169, 169, 0.726);
 }
 
 .weather-cell {
   border: 1px solid black;
-  min-height: 25px;
+  height: 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 150px;
 }
 
-.temperature-cell {
-  border: 1px solid black;
-  min-height: 25px;
-  background-color: rgb(238, 233, 157);
+.weather-cell h4 {
+  position: relative;
+  z-index: 1;
 }
 
-.pressure-cell {
+.weather-cell p {
+  position: relative;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.weather-cell img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150px;
+  height: 100px;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+#date {
+  height: 100px;
+}
+
+#temperature {
+  min-height: 150px;
+}
+
+#wind {
+  min-height: 220px;
+}
+
+#pressure {
+  height: 150px;
+}
+
+.temperature-cell-boiling {
   border: 1px solid black;
-  min-height: 25px;
-  background-color: rgb(176, 230, 194);
+  height: 150px;
+  background-color: rgba(255, 52, 52, 0.259);
+}
+
+.temperature-cell-hot {
+  border: 1px solid black;
+  height: 150px;
+  background-color: rgba(255, 104, 44, 0.259);
+}
+
+.temperature-cell-warm {
+  border: 1px solid black;
+  height: 150px;
+  background-color: rgba(255, 153, 36, 0.259);
+}
+
+.temperature-cell-normal {
+  border: 1px solid black;
+  height: 150px;
+  background-color: rgba(250, 218, 35, 0.259);
+}
+
+.temperature-cell-cool {
+  border: 1px solid black;
+  height: 150px;
+  background-color: rgba(126, 255, 21, 0.259);
+}
+
+.temperature-cell-cold {
+  border: 1px solid black;
+  height: 150px;
+  background-color: rgba(38, 248, 255, 0.259);
+}
+
+.temperature-cell-freezing {
+  border: 1px solid black;
+  height: 150px;
+  background-color: rgba(65, 61, 255, 0.259);
 }
 
 .wind-cell {
   border: 1px solid black;
-  min-height: 25px;
-  background-color: powderblue;
+  height: 220px;
+  min-width: 150px;
+  background-color: rgba(255, 255, 255, 0.459);
 }
+
+.compass-photo {
+  display: inline-block;
+  right: 0px;
+  max-width:60px;
+  max-height:60px;
+  width: auto;
+  height: auto;
+}
+
+.pressure-cell {
+  border: 1px solid black;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.459);
+}
+
