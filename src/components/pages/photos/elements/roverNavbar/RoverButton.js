@@ -8,6 +8,7 @@ export default class RoverButton extends Component {
         type="button"
         className="rover-button"
         onClick={this.props.onClick}
+        id={this.props.roverName}
       >
         {this.props.roverName}
       </button>

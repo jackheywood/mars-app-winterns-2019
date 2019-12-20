@@ -23,7 +23,7 @@ export default class PhotosPage extends Component {
   render() {
     return (
       <div className="photo-page">
-        <PageHeading bannerName="Here are some photos of Mars" />
+        <PageHeading bannerName="Oh Look, Some Photos!!!" />
         <RoverNavbar
           onClick={roverName => this.selectRover(roverName)}
         />

@@ -15,14 +15,14 @@
   text-align: center;
   padding: 30px 16px;
   text-decoration: none;
-  background-color: rgba(134, 134, 134, 0.349);
+  background-color: rgba(71, 71, 71, 0.4);
   float:left;
   width: 213px;
   font-size: large;
   font-family: fantasy;
-  border: 0;
+  border:0;
 }
 
 .rover-button:hover {
-  background-color: rgba(240, 156, 46, 0.568);
+  background-color: rgba(228, 228, 228, 0.4);
 }
