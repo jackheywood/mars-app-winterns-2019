@@ -1,11 +1,103 @@
 .homepage-container {
   text-align: center;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .weather-block {
   text-align: center;
-  display: block;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+}
+
+.weather-block h3 {
+  margin: 0px;
+}
+
+.weather-title {
+  background: rgba(255, 255, 255, 0.45);
+  width: 800px;
+  margin: auto;
+} 
+
+.weather-title-left-column {
+  float: left;
+}
+
+.weather-title-left-column h2 {
+  margin: 0px;
+  padding-left: 40px;
+}
+
+.weather-title-left-column div {
+  float: left;
+  padding-left: 50px;
+}
+
+.weather-title-right-column {
+  float: right;
+  padding-right: 40px;
+  margin-top: 5px;
+}
+
+.mars-season {
+  text-transform: capitalize;
+}
+
+.weather-attributes {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgba(75, 72, 72, 0.322);
+  margin: auto;
+}
+
+.temperature-element {
+  min-width: 250px;
+  min-height: 250px;
+  display: inline-block;
+  padding: 0px 15px;
+}
+
+.temperature-element div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 150px;
+}
+
+.temperature-element div h5 {
+  margin: 0px;
+}
+
+.wind-element {
+  min-width: 250px;
+  min-height: 250px;
+  display: inline-block;
+  padding: 0px 15px;
+  vertical-align: top;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.pressure-element {
+  min-width: 250px;
+  min-height: 250px;
+  display: inline-block;
+  padding: 0px 15px;
+}
+
+.pressure-element div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 150px;
+}
+
+.pressure-element div h5 {
+  margin: 0px;
 }
 
 .photo-block{
@@ -14,7 +106,13 @@
 }
 
 .homepage-photo {
-  padding: 50px 0;
+  padding: 0px 0;
+}
+
+.homepage-photo p {
+  display: inline-block;
+  margin-bottom: 0px;
+  background: rgba(255, 255, 255, 0.75);
 }
 
 .homepage-photo img{
@@ -23,23 +121,9 @@
   display: block;
 }
 
-.temperature-element {
-  display: inline-block;
-  padding: 0px 15px;
-}
-
-.pressure-element {
-  display: inline-block;
-  padding: 0px 15px;
-}
 
 .homepage-photo p{
   font-size: small;
   text-align: center;
   vertical-align: center;
-}
-  
-.wind-element {
-  display: inline-block;
-  padding: 0px 15px;
 }
