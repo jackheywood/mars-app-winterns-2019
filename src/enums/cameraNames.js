@@ -1,13 +1,14 @@
 const cameraNames = {
   FHAZ: 'FHAZ',
+  RHAZ: 'RHAZ',
+  MAST: 'MAST',
   CHEMCAM: 'CHEMCAM',
   MAHLI: 'MAHLI',
   MARDI: 'MARDI',
-  MAST: 'MAST',
-  MINITES: 'MINITES',
   NAVCAM: 'NAVCAM',
   PANCAM: 'PANCAM',
-  RHAZ: 'RHAZ',
+  MINITES: 'MINITES',
+
 };
 
 export default cameraNames;

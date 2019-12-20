@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import RoverCameraButton from './RoverCameraButton';
 import './CameraNavbar.css';
+import roverCameras from '../../../../../enums/roverCameras';
 
-export default function CameraNavbar() {
-  return (
-    <div className="camera-navbar">
-      <RoverCameraButton cameraName="FHAZ" />
-      <RoverCameraButton cameraName="RHAZ" />
-      <RoverCameraButton cameraName="MAST" />
-      <RoverCameraButton cameraName="CHECAM" />
-      <RoverCameraButton cameraName="MAHLI" />
-      <RoverCameraButton cameraName="MARDI" />
-      <RoverCameraButton cameraName="NAVCAM" />
-      <RoverCameraButton cameraName="PANCAM" />
-      <RoverCameraButton cameraName="MINITES" />
-    </div>
-  );
+export default class CameraNavbar extends Component {
+  renderCameraButtons() {
+    return Object.values(roverCameras[this.props.rover]).map(camera => (
+      <RoverCameraButton
+        key={camera}
+        cameraName={camera}
+        onClick={() => this.props.onClick(camera)}
+      />
+    ));
+  }
+
+  render() {
+    return (
+      <div className="camera-navbar">
+        {this.renderCameraButtons()}
+      </div>
+    );
+  }
 }

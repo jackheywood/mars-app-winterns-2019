@@ -1,27 +1,30 @@
+/* eslint-disable no-alert */
 import request from 'request';
 import API_KEY from './apiKey';
 import RoverPhoto from '../models/roverPhoto';
 import Rover from '../models/rover';
+import roverNames from '../enums/roverNames';
+import cameraNames from '../enums/cameraNames';
 
 export default function getPhotos() {
-  const curiosityCameras = ['FHAZ', 'RHAZ', 'MAST', 'CHEMCAM', 'MAHLI', 'MARDI', 'NAVCAM'];
-  const spiritCameras = ['FHAZ', 'RHAZ', 'NAVCAM', 'PANCAM', 'MINITES'];
-  const opportunityCameras = ['FHAZ', 'RHAZ', 'NAVCAM', 'PANCAM', 'MINITES'];
+  const curiosityCameras = [cameraNames.FHAZ, cameraNames.RHAZ, cameraNames.MAST, cameraNames.CHEMCAM, cameraNames.MAHLI, cameraNames.MARDI, cameraNames.NAVCAM];
+  const spiritCameras = [cameraNames.FHAZ, cameraNames.RHAZ, cameraNames.NAVCAM, cameraNames.PANCAM, cameraNames.MINITES];
+  const opportunityCameras = [cameraNames.FHAZ, cameraNames.RHAZ, cameraNames.NAVCAM, cameraNames.PANCAM, cameraNames.MINITES];
 
-  const rovers = [
-    new Rover('curiosity', curiosityCameras),
-    new Rover('spirit', spiritCameras),
-    new Rover('opportunity', opportunityCameras),
-  ];
+  const rovers = {
+    [roverNames.CURIOSITY]: new Rover(roverNames.CURIOSITY, curiosityCameras),
+    [roverNames.SPIRIT]: new Rover(roverNames.SPIRIT, spiritCameras),
+    [roverNames.OPPORTUNITY]: new Rover(roverNames.OPPORTUNITY, opportunityCameras),
+  };
 
-  const roverPromisesArray = rovers.map(rover => (
-    getManifest(rover.name)
-      .then(manifest => getSols(manifest, rover))
-      .then(sols => getAllRoverPhotos(rover, sols))));
+  const roverPromisesObject = Object.keys(rovers).map(rover => (
+    getManifest(rover)
+      .then(manifest => getSols(manifest, rovers[rover]))
+      .then(() => getAllRoverPhotos(rovers[rover]))));
 
-  return Promise.all(roverPromisesArray);
+  return Promise.all(roverPromisesObject)
+    .then(() => rovers);
 }
-
 
 function getManifest(rover) {
   return new Promise((resolve, reject) => {
@@ -29,7 +32,8 @@ function getManifest(rover) {
 
     request(url, (error, response, body) => {
       if (response.statusCode !== 200) {
-        reject(Error(`failed to get manifest from ${rover}`));
+        alert(`failed to get manifest from ${rover}`);
+        reject();
       } else {
         const manifest = JSON.parse(body);
         resolve(manifest);
@@ -39,39 +43,40 @@ function getManifest(rover) {
 }
 
 function getSols(manifest, rover) {
-  const sols = rover.cameras.map(camera => {
+  Object.keys(rover.cameras).forEach(camera => {
     let maxSol;
     const photoManifest = manifest.photo_manifest.photos;
+
     let i = photoManifest.length;
     while (!maxSol && i > 0) {
       i -= 1;
-      maxSol = photoManifest[i].cameras.includes(camera.shortName) ? photoManifest[i].sol : null;
+      maxSol = photoManifest[i].cameras.includes(rover.cameras[camera].shortName) ? photoManifest[i].sol : null;
     }
-    return maxSol;
+    rover.cameras[camera].maxSol = maxSol;
   });
-  return sols;
 }
 
-
-function getAllRoverPhotos(rover, sols) {
+function getAllRoverPhotos(rover) {
   const roverPromises = [];
-  for (let i = 0; i < rover.cameras.length; i++) {
+
+  Object.keys(rover.cameras).forEach(camera => {
     roverPromises.push(new Promise((resolve, reject) => {
-      const sol = sols[i];
-      const camera = rover.cameras[i].shortName;
-      const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover.name}/photos?sol=${sol}&camera=${camera}&api_key=${API_KEY}`;
+      const sol = rover.cameras[camera].maxSol;
+      const cameraShortName = rover.cameras[camera].shortName;
+      const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover.name}/photos?sol=${sol}&camera=${cameraShortName}&api_key=${API_KEY}`;
       request(url, (error, response, body) => {
         if (response.statusCode !== 200) {
-          reject(Error(`failed to get data from the camera ${camera} on ${rover} on sol ${sol}`));
+          reject(Error(`failed to get data from the camera ${cameraShortName} on ${rover} on sol ${sol}`));
         } else {
           const photoJSONs = JSON.parse(body);
           const photosArray = photoJSONs.photos.map(photo => new RoverPhoto(photo.img_src, photo.earth_date));
-          photosArray.forEach(photo => rover.cameras[i].photos.push(photo));
+          photosArray.forEach(photo => rover.cameras[camera].photos.push(photo));
           resolve();
         }
       });
     }));
-  }
+  });
+
   return Promise.all(roverPromises)
     .then(() => rover);
 }

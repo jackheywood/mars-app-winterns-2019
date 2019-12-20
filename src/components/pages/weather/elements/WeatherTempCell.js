@@ -26,7 +26,7 @@ export default class WeatherTempCell extends Component {
     const temperatureCellClass = WeatherTempCell.getTemperatureCellClass(averageTemp);
     return (
       <div className={temperatureCellClass}>
-        <h4>{averageTemp} °F</h4>
+        <h4>{averageTemp} °C</h4>
         <p>Max: {maxTemp}</p>
         <p>Min: {minTemp}</p>
       </div>
