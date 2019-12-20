@@ -2,21 +2,15 @@ import React, { Component } from 'react';
 import WeatherColumn from './WeatherColumn';
 import WeatherTitleColumn from './WeatherTitleColumn';
 import getMarsWeatherData from '../../../../api/inSightApiClient';
-// import dummyWeatherData from './weatherDummyData';
-
 import Loader from '../../../shared/loader';
+import angryLadyImage from '../../../../assets/images/angry_lady.jpg';
 
 export default class WeatherTable extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     inSightWeather: dummyWeatherData,
-  //   };
-  // }
   constructor(props) {
     super(props);
     this.state = {
       inSightWeather: null,
+      error: false,
     };
   }
 
@@ -24,10 +18,18 @@ export default class WeatherTable extends Component {
     getMarsWeatherData()
       .then(inSightWeather => this.setState({
         inSightWeather,
-      })).catch();
+      })).catch(() => (this.setState({ error: true })));
   }
 
   render() {
+    if (this.state.error) {
+      return (
+        <div>
+          <img src={angryLadyImage} alt="Error" />
+          <p>Weather API Call unsuccessful</p>
+        </div>
+      );
+    }
     return (this.state.inSightWeather ? (
       <div className="weather-table">
         <WeatherTitleColumn />
