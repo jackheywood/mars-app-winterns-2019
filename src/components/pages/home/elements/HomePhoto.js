@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import getPhotos from '../../../../api/photoApiClient';
 import Loader from '../../../shared/loader';
+import roverNames from '../../../../enums/roverNames';
+import cameraNames from '../../../../enums/cameraNames';
 
 export default class HomePhoto extends Component {
   constructor() {
@@ -13,7 +15,7 @@ export default class HomePhoto extends Component {
 
   componentDidMount() {
     getPhotos().then(response => {
-      const homePagePhoto = response[0].cameras[0].photos[0];
+      const homePagePhoto = response[roverNames.CURIOSITY].cameras[cameraNames.FHAZ].photos[0];
       this.setState({
         imgSrc: homePagePhoto.imgSrc,
         date: homePagePhoto.earthDate,

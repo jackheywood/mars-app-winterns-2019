@@ -27,8 +27,11 @@ export default class PhotosPage extends Component {
         <RoverNavbar
           onClick={roverName => this.selectRover(roverName)}
         />
+
         <h2>{this.state.currentRover}</h2>
-        <Rover />
+        <Rover
+          currentRover={this.state.currentRover}
+        />
         <PageNavButton
           buttonLink="/"
           message="Return to Home Page"
