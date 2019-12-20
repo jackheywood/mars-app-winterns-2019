@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import request from 'request';
 import API_KEY from './apiKey';
 import RoverPhoto from '../models/roverPhoto';
@@ -29,7 +30,8 @@ function getManifest(rover) {
 
     request(url, (error, response, body) => {
       if (response.statusCode !== 200) {
-        reject(Error(`failed to get manifest from ${rover}`));
+        alert(`failed to get manifest from ${rover}`);
+        reject();
       } else {
         const manifest = JSON.parse(body);
         resolve(manifest);
