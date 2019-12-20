@@ -31,8 +31,7 @@ function getManifest(rover) {
     request(url, (error, response, body) => {
       if (response.statusCode !== 200) {
         alert(`failed to get manifest from ${rover}`);
-        // eslint-disable-next-line prefer-promise-reject-errors
-        reject('failed to get manifest from rover');
+        reject();
       } else {
         const manifest = JSON.parse(body);
         resolve(manifest);

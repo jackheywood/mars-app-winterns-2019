@@ -28,7 +28,7 @@ export default class WeatherBlock extends Component {
   }
 
   render() {
-    if (this.state.error === true) {
+    if (this.state.error) {
       return (
         <div>
           <img src={angryLadyImage} alt="Error" />

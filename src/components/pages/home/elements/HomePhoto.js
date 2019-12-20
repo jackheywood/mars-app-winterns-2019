@@ -19,10 +19,10 @@ export default class HomePhoto extends Component {
         imgSrc: homePagePhoto.imgSrc,
         message: `A photo taken by curiosity's FHAZ camera at ${homePagePhoto.earthDate}`,
       });
-    }).catch(errorMessage => {
+    }).catch(() => {
       this.setState({
         imgSrc: angryLadyImage,
-        message: errorMessage,
+        message: 'Failed to get photo from rover',
       });
     });
   }
