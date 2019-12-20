@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import getPhotos from '../../../../api/photoApiClient';
 import Loader from '../../../shared/loader';
 import angryLadyImage from '../../../../assets/images/angry_lady.jpg';
+import roverNames from '../../../../enums/roverNames';
+import cameraNames from '../../../../enums/cameraNames';
 
 export default class HomePhoto extends Component {
   constructor() {
@@ -14,7 +16,7 @@ export default class HomePhoto extends Component {
 
   componentDidMount() {
     getPhotos().then(response => {
-      const homePagePhoto = response[0].cameras[0].photos[0];
+      const homePagePhoto = response[roverNames.CURIOSITY].cameras[cameraNames.FHAZ].photos[0];
       this.setState({
         imgSrc: homePagePhoto.imgSrc,
         message: `A photo taken by curiosity's FHAZ camera at ${homePagePhoto.earthDate}`,
