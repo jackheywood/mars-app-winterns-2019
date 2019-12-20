@@ -6,6 +6,7 @@ import AboutRover from './AboutRover';
 import cameraNames from '../../../../enums/cameraNames';
 import getPhotos from '../../../../api/photoApiClient';
 import Loader from '../../../shared/loader';
+import aboutText from '../../../../enums/aboutText';
 
 export default class Rover extends Component {
   constructor(props) {
@@ -76,6 +77,11 @@ export default class Rover extends Component {
   render() {
     return this.state.photoUrlArray ? (
       <div className="rover-container">
+        <AboutRover
+          currentRover={this.props.currentRover}
+          currentCamera={this.state.currentCamera}
+        />
+        <h2>{aboutText[this.state.currentCamera]}: {this.state.photoDate}</h2>
         <RoverImage
           photoUrlArray={this.state.photoUrlArray}
           index={this.state.index}
@@ -85,11 +91,6 @@ export default class Rover extends Component {
         <CameraNavbar
           onClick={camera => this.getCameraPhotos(camera)}
           rover={this.props.currentRover}
-        />
-        <h2>{this.state.currentCamera}: {this.state.photoDate}</h2>
-        <AboutRover
-          currentRover={this.props.currentRover}
-          currentCamera={this.state.currentCamera}
         />
       </div>
     ) : (

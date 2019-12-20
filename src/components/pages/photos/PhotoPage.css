@@ -8,7 +8,8 @@
 .rover-container {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
+  text-align: center;
 }
 
 .image-and-intro {
@@ -16,6 +17,7 @@
 }
 
 .rover-image {
+  margin: 10px auto;
   display: flex;
   align-items: center;
   justify-content:center;
@@ -26,20 +28,15 @@
   height: 540px;
   border-radius: 10px;
   align-items: center;
-  
-}
-
-.info-container {
-  margin: 5px;
-  background-color: darkgray;
 }
 
 .about-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: block;
   width: 600px;
-  background-color: rgba(226, 226, 226, 0.767);
+  background-color: rgba(212, 212, 212, 0.486);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0px auto;
 }
 
 .rover-image-button {
@@ -77,6 +74,4 @@
   text-align: center;
   justify-content: center;
   padding-left: 20px;
- 
-  
 }
