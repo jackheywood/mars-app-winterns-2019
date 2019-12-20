@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
 export default class WeatherTempCell extends Component {
-  render() {
-    const averageTemp = this.props.dayTemperatureData.avg.toFixed(3);
-    const maxTemp = this.props.dayTemperatureData.max.toFixed(3);
-    const minTemp = this.props.dayTemperatureData.min.toFixed(3);
+  constructor(props) {
+    super(props);
+    this.temperatureCellClass = null;
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  getTemperatureCellClass(averageTemp) {
     let temp = 'boiling';
     if (averageTemp >= -20) {
       temp = 'hot';
@@ -19,9 +22,16 @@ export default class WeatherTempCell extends Component {
     } else {
       temp = 'freezing';
     }
-    const className = `temperature-cell-${temp}`;
+    return (`temperature-cell-${temp}`);
+  }
+
+  render() {
+    const averageTemp = this.props.dayTemperatureData.avg.toFixed(3);
+    const maxTemp = this.props.dayTemperatureData.max.toFixed(3);
+    const minTemp = this.props.dayTemperatureData.min.toFixed(3);
+    const temperatureCellClass = this.getTemperatureCellClass(averageTemp);
     return (
-      <div className={className}>
+      <div className={temperatureCellClass}>
         <h4>{averageTemp} °F</h4>
         <p>Max: {maxTemp}</p>
         <p>Min: {minTemp}</p>
