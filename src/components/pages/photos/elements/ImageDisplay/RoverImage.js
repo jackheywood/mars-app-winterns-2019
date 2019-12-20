@@ -8,6 +8,7 @@ export default class RoverImage extends Component {
     super(props);
     this.state = {
       index: 0,
+      currentRover: 'Curiosity',
     };
   }
 
@@ -47,10 +48,6 @@ export default class RoverImage extends Component {
               direction=">"
               onClick={() => this.incrementIndex()}
             />
-          </div>
-          <div className="about-container">
-            <h4>introduction</h4>
-            <p> A bit of info about the rover.</p>
           </div>
         </div>
         <div className="photo-index">

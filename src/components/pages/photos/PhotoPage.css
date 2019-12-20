@@ -1,25 +1,24 @@
 .photo-page {
   text-align: center;
-  display: inline-block;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  vertical-align: middle;
 }
 
 .rover-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 }
 
 .image-and-intro {
-  display: flex;
-  align-self: center;
-  width: 800px;
+  display: inline-block;
 }
 
 .rover-image {
   display: flex;
   align-items: center;
   justify-content:center;
-  margin-left: 130px;
 }
 
 .rover-image .camera-capture {
@@ -30,15 +29,17 @@
   
 }
 
+.info-container {
+  margin: 5px;
+  background-color: darkgray;
+}
+
 .about-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 300px;
-  height: 0px;
-  vertical-align: center;
-  background-color: rgba(223, 221, 221, 0);
-  margin: 50px;
+  width: 600px;
+  background-color: rgba(226, 226, 226, 0.767);
 }
 
 .rover-image-button {
