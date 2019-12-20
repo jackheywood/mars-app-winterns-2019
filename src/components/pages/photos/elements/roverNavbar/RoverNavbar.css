@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border:0;
 }
 
 .rover-button {
@@ -14,13 +15,16 @@
   text-align: center;
   padding: 30px 16px;
   text-decoration: none;
-  background-color: powderblue;
+  background-color: rgba(134, 134, 134, 0.349);
   float:left;
   width: 213px;
   font-size: large;
   font-family: fantasy;
+  border: 0;
 }
 
-.rover-button:focus {
-  background-color:rgb(0, 162, 255);
+.rover-button:hover {
+
+  background-color: rgb(252, 113, 0);
+
 }

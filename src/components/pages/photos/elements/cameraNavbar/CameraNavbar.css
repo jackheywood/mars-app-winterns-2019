@@ -6,16 +6,20 @@
 }
 
 .rover-camera-button {
-  display: block;
+  display: inline-block;
   width: 90px;
   height: 61px;
   color: black;
   text-align: center;
   padding: 20px 16px;
   text-decoration: none;
-  background-color: pink;
+  background-color: rgba(139, 139, 139, 0.411);
+  border:0;
+
 }
 
-.rover-camera-button:focus {
+.rover-camera-button:hover {
   background-color: rgb(255, 148, 166);
+  border:0;
 }
+
