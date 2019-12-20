@@ -7,10 +7,14 @@ export default class WeatherTitle extends Component {
   render() {
     return (
       <div className="weather-title">
-        <h3>Elysium Planitia, Mars</h3>
-        <Season marsSeason={this.props.marsSeason} />
-        <MarsSol marsSol={this.props.marsSol} />
-        <EarthDate earthDate={this.props.earthDate} />
+        <div className="weather-title-left-column">
+          <h2>Elysium Planitia, Mars</h2>
+          <EarthDate earthDate={this.props.earthDate} />
+        </div>
+        <div className="weather-title-right-column">
+          <Season marsSeason={this.props.marsSeason} />
+          <MarsSol marsSol={this.props.marsSol} />
+        </div>
       </div>
     );
   }

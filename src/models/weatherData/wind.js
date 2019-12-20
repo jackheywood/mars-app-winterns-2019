@@ -5,4 +5,5 @@ export default class Wind {
     this.avg = inSightWeatherData.HWS.av;
     this.dir = inSightWeatherData.WD.most_common.compass_point;
   }
+
 }

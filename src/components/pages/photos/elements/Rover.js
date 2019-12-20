@@ -87,7 +87,10 @@ export default class Rover extends Component {
           rover={this.props.currentRover}
         />
         <h2>{this.state.currentCamera}: {this.state.photoDate}</h2>
-        <AboutRover />
+        <AboutRover
+          currentRover={this.props.currentRover}
+          currentCamera={this.state.currentCamera}
+        />
       </div>
     ) : (
       <Loader />
