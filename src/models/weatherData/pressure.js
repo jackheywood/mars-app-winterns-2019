@@ -4,7 +4,7 @@ export default class Pressure {
       this.max = inSightPressureData.mx;
       this.min = inSightPressureData.mn;
       this.avg = inSightPressureData.av;
-    } catch (Exception) {
+    } catch (e) {
       this.max = null;
       this.min = null;
       this.avg = null;

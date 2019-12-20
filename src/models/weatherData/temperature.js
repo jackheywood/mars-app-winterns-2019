@@ -4,7 +4,7 @@ export default class Temperature {
       this.max = inSightTemperatureData.mx;
       this.min = inSightTemperatureData.mn;
       this.avg = inSightTemperatureData.av;
-    } catch (Exception) {
+    } catch (e) {
       this.max = null;
       this.min = null;
       this.avg = null;
