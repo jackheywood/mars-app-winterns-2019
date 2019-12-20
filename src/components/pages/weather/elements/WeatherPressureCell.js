@@ -16,7 +16,7 @@ export default class WeatherPressureCell extends Component {
         <p>Min: {minPressure}</p>
       </div>
     ) : (
-      <WeatherErrorMessage className="temperature-cell" type="temperature" />
+      <WeatherErrorMessage className="pressure-cell" type="pressure" />
     ));
   }
 }
