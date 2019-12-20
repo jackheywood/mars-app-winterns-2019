@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 
 export default class WeatherTempCell extends Component {
-  constructor(props) {
-    super(props);
-    this.temperatureCellClass = null;
-  }
-
-  // eslint-disable-next-line class-methods-use-this
-  getTemperatureCellClass(averageTemp) {
+  static getTemperatureCellClass(averageTemp) {
     let temp = 'boiling';
     if (averageTemp >= -20) {
       temp = 'hot';
@@ -29,7 +23,7 @@ export default class WeatherTempCell extends Component {
     const averageTemp = this.props.dayTemperatureData.avg.toFixed(3);
     const maxTemp = this.props.dayTemperatureData.max.toFixed(3);
     const minTemp = this.props.dayTemperatureData.min.toFixed(3);
-    const temperatureCellClass = this.getTemperatureCellClass(averageTemp);
+    const temperatureCellClass = WeatherTempCell.getTemperatureCellClass(averageTemp);
     return (
       <div className={temperatureCellClass}>
         <h4>{averageTemp} °F</h4>

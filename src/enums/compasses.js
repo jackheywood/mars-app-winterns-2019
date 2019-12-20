@@ -15,21 +15,23 @@ import compassWNW from '../assets/images/compassPhotos/compassWNW.png';
 import compassNW from '../assets/images/compassPhotos/compassNW.png';
 import compassNNW from '../assets/images/compassPhotos/compassNNW.png';
 
-export {
-  compassN,
-  compassNNE,
-  compassNE,
-  compassENE,
-  compassE,
-  compassESE,
-  compassSE,
-  compassSSE,
-  compassS,
-  compassSSW,
-  compassSW,
-  compassWSW,
-  compassW,
-  compassWNW,
-  compassNW,
-  compassNNW,
+const compassImages = {
+  N: compassN,
+  NNE: compassNNE,
+  NE: compassNE,
+  ENE: compassENE,
+  E: compassE,
+  ESE: compassESE,
+  SE: compassSE,
+  SSE: compassSSE,
+  S: compassS,
+  SSW: compassSSW,
+  SW: compassSW,
+  WSW: compassWSW,
+  W: compassW,
+  WNW: compassWNW,
+  NW: compassNW,
+  NNW: compassNNW,
 };
+
+export default compassImages;
