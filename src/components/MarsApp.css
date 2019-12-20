@@ -32,8 +32,9 @@
   width: 400px;
   font-size: large;
   font-family: fantasy;
+  margin: 10px;
 }
 
 .page-nav-button:hover{
-  background-color: cornflowerblue;
+  background-color: rgba(100, 148, 237, 0.664);
 }

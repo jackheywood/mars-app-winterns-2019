@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import RoverImage from './RoverImage';
-import AboutRover from './AboutRover';
+import RoverImage from './ImageDisplay/RoverImage';
 import '../PhotoPage.css';
 import CameraNavbar from './cameraNavbar/CameraNavbar';
 
@@ -15,7 +14,6 @@ export default class Rover extends Component {
       <div className="rover-container">
         <RoverImage photoUrlArray={dummyPhotoUrlArray} />
         <CameraNavbar />
-        {/* <AboutRover /> */}
       </div>
     );
   }
