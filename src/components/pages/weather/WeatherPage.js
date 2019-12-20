@@ -8,7 +8,8 @@ export default class WeatherPage extends Component {
   render() {
     return (
       <div>
-        <PageHeading bannerName="Here is some information about the current weather" />
+        <PageHeading bannerName="A Week's Weather Review" />
+        <h2>Weather data from Elysium Planitia, Mars</h2>
         <WeatherTable />
         <PageNavButton
           buttonLink="/"
