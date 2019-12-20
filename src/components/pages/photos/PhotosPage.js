@@ -5,6 +5,7 @@ import './PhotoPage.css';
 import roverNames from '../../../enums/roverNames';
 import PageHeading from '../../shared/PageHeading';
 import PageNavButton from '../../shared/PageNavButton';
+import cameraNames from '../../../enums/cameraNames';
 
 export default class PhotosPage extends Component {
   constructor(props) {
@@ -27,9 +28,7 @@ export default class PhotosPage extends Component {
         <RoverNavbar
           onClick={roverName => this.selectRover(roverName)}
         />
-        { /* the li is for us to check clicking on the buttons does change the state */ }
-        <li>{this.state.currentRover}</li>
-        <Rover />
+        <Rover currentRover={this.state.currentRover} currentCamera={cameraNames.FHAZ} />
         <PageNavButton
           buttonLink="/"
           message="Return to Home Page"
