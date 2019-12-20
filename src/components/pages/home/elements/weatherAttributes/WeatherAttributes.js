@@ -8,8 +8,8 @@ export default class WeatherAttributes extends Component {
     return (
       <div className="weather-attributes">
         <TemperatureElement temp={this.props.temp} />
-        <PressureElement pressure={this.props.pressure} />
         <WindElement wind={this.props.wind} />
+        <PressureElement pressure={this.props.pressure} />
       </div>
     );
   }
