@@ -15,7 +15,7 @@ export default class Rover extends Component {
       <div className="rover-container">
         <RoverImage photoUrlArray={dummyPhotoUrlArray} />
         <CameraNavbar />
-        <AboutRover />
+        <AboutRover currentRover={this.props.currentRover} currentCamera={this.props.currentCamera} />
       </div>
     );
   }
